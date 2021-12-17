@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int limit=1e5+10;
+const int limit=1e6+10;
 int arr[limit];
 int main(){
     int query;
@@ -12,13 +12,14 @@ int main(){
             scanf("%d",&arr[i]);
         }
         sort(arr,arr+n);
-        int litle=arr[0];
-        for(int i=0;i<n;i++){
-            for(int j=i+1;j<n;j++){
-                arr[j]-=arr[i];
-            }
-            if(arr[i+1]>litle && i+1<n){
-                litle=arr[i+1];
+        int litle=arr[0],total=arr[0];
+        for(int i=1;i<n;i++){
+            int aux=arr[i];
+            arr[i]-=total;
+            total+=arr[i];
+            //printf("%d ",arr[i]);
+            if(arr[i]>litle){
+                litle=arr[i];
             }
         }
         printf("%d\n",litle);
