@@ -1,50 +1,58 @@
 #include<bits/stdc++.h>
 using namespace std;
-struct fPoint
+int x[10],y[10];
+double polygonArea()
 {
-  float x;
-  float y;
-};
-float CalcTriArea(fPoint v1, fPoint v2, fPoint v3)
-{
-  float det = 0.0f;
-  det = ((v1.x - v3->x) * (v2.y - v3.y)) - ((v2.x - v3.x) * (v1.y - v3.y));
-  return (det / 2.0f);
+    double area = 0.0;
+    // Calculate value of shoelace formula
+    int j = 3 - 1;
+    for (int i = 0; i < 3; i++)
+    {
+        area += ((double)x[j] + (double)x[i]) * ((double)y[j] - (double)y[i]);
+        j = i;  // j is previous vertex to i
+    }
+    // Return absolute value
+    return abs(area / 2.0);
 }
-bool IsPointInTri(const fPoint pt, const fPoint v1, const fPoint v2, const fPoint v3)
-{
-  float TotalArea = CalcTriArea(v1, v2, v3);
-  float Area1 = CalcTriArea(pt, v2, v3);
-  float Area2 = CalcTriArea(pt, v1, v3);
-  float Area3 = CalcTriArea(pt, v1, v2);
-
-  if((Area1 + Area2 + Area3) > TotalArea)
-    return false;
-  else
+bool calcula(){
+    double v1=polygonArea();
+    ////////////////
+    int aux_x=x[0],aux_y=x[0];
+    x[0]=x[3],y[0]=y[3];
+    x[3]=aux_x,y[3]=aux_y;
+    double principal=polygonArea();
+    //////////
+    aux_x=x[1],aux_y=x[1];
+    x[1]=x[3],y[1]=y[3];
+    x[3]=aux_x,y[3]=aux_y;
+    double v2=polygonArea();
+    //////////
+    aux_x=x[2],aux_y=x[2];
+    x[2]=x[2],y[2]=y[3];
+    x[3]=aux_x,y[3]=aux_y;
+    double v3=polygonArea();
+    ///////////////////
+    printf("v1:%lf v2:%lf v3:%lf sum:%lf principal:%lf\n",
+           v1,v2,v3,v1+v2+v3,principal);
+    if(v1+v2+v3>principal){
+        return false;
+    }
     return true;
 }
-
 int main(){
     int test;
     scanf("%d",&test);
-    for(int k=1;i<=k;k++){
-        int ptx,pty,v1x,v1y,v2x,v2y;
-        scanf("%d %d %d %d %d %d",&ptx,&pty,&v1x,&v1y,&v2x,&v2y);
-        fPoint pt,v1,v2,v3;
-        pt.x=ptx;
-        pt.y=pty;
-        v1.x=v1x;
-        v1.y=v1y;
-        v2.x=v2x;
-        v2.y=v2y;
-        bool can=IsPointInTri(pt,v1,v2,v3);
+    for(int k=1;k<=test;k++){
+        for(int i=0;i<4;i++){
+            scanf("%d %d",&x[i],&y[i]);
+        }
+        bool can=calcula();
         if(can){
-            printf("Case #%d: IN",k);
+            printf("Case #%d: IN\n",k);
         }
         else{
-            printf("Case #%d: OUT",k);
+            printf("Case #%d: OUT\n",k);
         }
-
     }
     return 0;
 }
