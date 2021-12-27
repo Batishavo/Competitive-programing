@@ -1,39 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
-int x[10],y[10];
-double polygonArea()
+double x[10],y[10];
+double polygonArea(double dX0, double dY0, double dX1, double dY1, double dX2, double dY2)
 {
-    double area = 0.0;
-    // Calculate value of shoelace formula
-    int j = 3 - 1;
-    for (int i = 0; i < 3; i++)
-    {
-        area += ((double)x[j] + (double)x[i]) * ((double)y[j] - (double)y[i]);
-        j = i;  // j is previous vertex to i
-    }
-    // Return absolute value
-    return abs(area / 2.0);
+    double dArea = ((dX1 - dX0)*(dY2 - dY0) - (dX2 - dX0)*(dY1 - dY0))/2.0;
+    return (dArea > 0.0) ? dArea : -dArea;
 }
 bool calcula(){
-    double v1=polygonArea();
-    ////////////////
-    int aux_x=x[0],aux_y=x[0];
-    x[0]=x[3],y[0]=y[3];
-    x[3]=aux_x,y[3]=aux_y;
-    double principal=polygonArea();
-    //////////
-    aux_x=x[1],aux_y=x[1];
-    x[1]=x[3],y[1]=y[3];
-    x[3]=aux_x,y[3]=aux_y;
-    double v2=polygonArea();
-    //////////
-    aux_x=x[2],aux_y=x[2];
-    x[2]=x[2],y[2]=y[3];
-    x[3]=aux_x,y[3]=aux_y;
-    double v3=polygonArea();
+    double principal=polygonArea(x[1],y[1],x[2],y[2],x[3],y[3]);
+    double v1=polygonArea(x[0],y[0],x[2],y[2],x[3],y[3]);
+    double v2=polygonArea(x[1],y[1],x[0],y[0],x[3],y[3]);
+    double v3=polygonArea(x[1],y[1],x[2],y[2],x[0],y[0]);
     ///////////////////
-    printf("v1:%lf v2:%lf v3:%lf sum:%lf principal:%lf\n",
-           v1,v2,v3,v1+v2+v3,principal);
+    /*printf("v1:%lf v2:%lf v3:%lf sum:%lf principal:%lf\n",
+           v1,v2,v3,v1+v2+v3,principal);*/
     if(v1+v2+v3>principal){
         return false;
     }
@@ -44,7 +24,7 @@ int main(){
     scanf("%d",&test);
     for(int k=1;k<=test;k++){
         for(int i=0;i<4;i++){
-            scanf("%d %d",&x[i],&y[i]);
+            scanf("%lf %lf",&x[i],&y[i]);
         }
         bool can=calcula();
         if(can){
