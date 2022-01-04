@@ -7,10 +7,9 @@ int main(){
         int n;
         string cad,lexi="";
         cin>>n>>cad;
-        lexi+=cad[0];
         for(int i=1;i<n;i++){
-            if(cad[i]<=lexi[i-1]){
-                lexi+=cad[i];
+            if(cad[i]<=cad[i-1]){
+                lexi+=cad[i-1];
             }
             else{
                 break;
@@ -18,8 +17,7 @@ int main(){
         }
         string aux=lexi;
         reverse(aux.begin(),aux.end());
-        lexi+=aux;
-        cout<<lexi<<endl;
+        cout<<lexi<<aux<<endl;
     }
     return 0;
 }
