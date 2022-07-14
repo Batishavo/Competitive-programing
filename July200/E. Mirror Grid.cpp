@@ -25,17 +25,22 @@ int main(){
             }*/
         }
 
-        for(int i=0;i<n/2;i++){
+        for(int i=0;i<(n+1)/2;i++){
             for(int j=0;j<n/2;j++){
-                 int num= arr[i][j]+
+                 /*int num= arr[i][j]+
                      arr[i][n-j-1]+
                      arr[n-i-1][j]+
-                     arr[n-i-1][n-j-1];
-                     mat[i][j]=tp;
+                     arr[n-i-1][n-j-1];*/
+
+                 int num =  arr[i][j]+
+                            arr[j][n-i-1]+
+                            arr[n-i-1][n-j-1]+
+                            arr[n-j-1][i];
+                    /* mat[i][j]=tp;
                      mat[i][n-j-1]=tp;
                      mat[n-i-1][j]=tp;
                      mat[n-i-1][n-j-1]=tp;
-                     tp++;
+                     tp++;*/
 
                 num-='0'*4;
 
@@ -48,36 +53,14 @@ int main(){
 
             }
         }
-          if(n%2!=0){
-            for(int i=0;i<n/2;i++){
-                int num=arr[i][n/2]+
-                        arr[n/2][i]+
-                        arr[n/2][n-i-1]+
-                        arr[n-i-1][n/2];
-                        mat[i][n/2]=tp;
-                        mat[n/2][i]=tp;
-                        mat[n/2][n-i-1]=tp;
-                        mat[n-i-1][n/2]=tp;
-                        tp++;
-                 num-='0'*4;
-                if(num==3 || num==1){
-                    total++;
-                }
-                if(num==2){
-                    total+=2;
-                }
-            }
-
-          }
-
 
         printf("%d\n",total);
-        for(int i=0;i<n;i++){
+        /*for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 printf("%c ",mat[i][j]%10);
             }
             printf("\n");
-        }
+        }*/
 
     }
 
