@@ -1,1 +1,2 @@
-9
+
+            actual[i]=fin[A[i]];

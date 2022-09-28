@@ -1,26 +1,38 @@
 #include<bits/stdc++.h>
 
 using namespace std;
-string cad,aux;
+string cad;
 int t;
 int main(){
     cin>>t; 
     while (t--)
     {
-        vector<int> nums(15,0);  
         cin>>cad;
-        aux=cad;
-        sort(cad.begin(), cad.end());
+        
+        vector<bool> sum(cad.size()+5,false);  
+
+        char min = *min_element(cad.begin(), cad.end()),
+             max = *max_element(cad.begin(), cad.end());
+        for(int i=min;i<=max;i++){
+            bool flag= false;
+            for(int j=cad.size()-1;j>=0;j--){
+
+                if(!flag && cad[j] == i){
+                    flag=true;
+                }
+                else if(flag && cad[j]> i){
+                    sum[j]=true;
+                }
+            }
+        }
+
         for(int i=0;i<cad.size();i++){
-            nums[cad[i]-'0']++;
+            if(sum[i] && cad[i] <'9'){
+                cad[i]++;
+            }
         }
-        int p1=0,
-            p2=0;
-        
-        while(p1<cad.size() && p2<cad.size()){
-            
-        }
-        
+        sort(cad.begin(),cad.end());
+        cout<<cad<<endl;
     }
     
 

@@ -7,32 +7,33 @@ const int limit = (10e6)+10;
 int t,n;
 string cad;
 long long cont;
-
+vector<int> divs;
 int main(){
     cin>> t;
     while(t--){
-        cont=0;
+        
         cin>>n>>cad;
-
         for(int i=0;i<n;i++){
-
+            
             if(cad[i]=='0'){
-                cad[i]='1';
-                cont+=i+1;
-
-                for(int j=(i+1)*2;j<=n;j+=i+1){
-                    if(cad[j-1]=='0'){
-                        cad[j-1]='1';
-                        cont+=i+1;
+                bool flag=false;
+                for(auto x:divs){
+                    if((i+1)%x==0){
+                        flag=true;
+                        cont+=x;
+                        break;
                     }
-                    else break;
+                }
+                if(!flag){
+                    cont+=i+1;
+                    divs.push_back(i+1);
                 }
             }
-
-
         }
 
         cout<<"--"<<cont<<endl;
+        cont=0;
+        divs.clear();
     }
 
     return 0;
