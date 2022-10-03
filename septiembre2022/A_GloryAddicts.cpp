@@ -10,12 +10,13 @@ int t,
     contF,
     contH,
     menorComp,
-    leer,
+    
     pj;
 
-long long cont;
+long long cont,
+          leer;
 
-vector<int> menor,
+vector<long long> menor,
             mayor;
 
 int main()
@@ -48,7 +49,7 @@ int main()
 
         for (int i = 0; i < n; i++)
         {
-            scanf("%d",&leer);
+            cin>>leer;
             if (element[i] == menorComp)
             {
                 menor.push_back(leer);

@@ -38,13 +38,18 @@ int main()
             actual = arr[i] - arr[i - 1];
 
             if (actual > ant)
-            {   
-                //cout<<actual<<" "<<i<<endl;
+            {
+                // cout<<actual<<" "<<i<<endl;
                 flag = false;
                 break;
             }
 
             ant = actual;
+        }
+        if (k == 1)
+        {
+            cout << "YES" << endl;
+            continue;
         }
         if (flag)
         {
@@ -77,9 +82,16 @@ int main()
                 }
                 else
                 {
-                    if((num<=abs(arr[0])))
-                    {
-                        if ((arr[0] / num) + aux <= ant)
+                    //cout<<"---------"<<ant<<endl;
+                    if(ant == 0 || (arr[0]==-1 && arr[0]<=ant && ant>=0)){
+                        cout << "YES\n";
+                    }
+                    else if ((num <= abs(arr[0])))
+                    {   
+                        
+                        //cout<<"---------"<<endl;
+                        //printf("%d %d %d %d %d\n",arr[0],num,aux,(arr[0] / num),ant);
+                        if (((arr[0] / num) <= ant))
                         {
                             cout << "YES\n";
                         }
@@ -88,7 +100,8 @@ int main()
                             cout << "NO" << endl;
                         }
                     }
-                    else{
+                    else
+                    {
                         cout << "NO" << endl;
                     }
                 }
