@@ -29,23 +29,23 @@ int main(){
         if(flag==1){
             pd+=vd;
             if(pd>=pp){
-                //printf("--%d\n",i);
+                printf("--%d\n",i);
                 cont++;
                 flag=0;
-                //pd==pp;
+                pd==pp;
             }
         }
         else if(flag==0){
             pd-=vd;
             if(pd<=0){
-                tmp=f-1;
+                tmp=f;
                 flag=2;
-                //pd=1;
+                pd=0;
             }
         }
         else if(flag==2){
             tmp--;
-            if(tmp<=0){
+            if(tmp<=1){
                 flag=1;
             }
         }
