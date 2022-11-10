@@ -1,2 +1,1 @@
-mat[3]++;
-            mat[2] += 2;
+#include<bits/stdc+
