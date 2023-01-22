@@ -11,10 +11,10 @@ long long perm(int n, long long cont)
     long long mul=1;
     for(int i=2;i<=n;i++){
         //suma+=cont*i;
-        mul*=i;
-        mul%=mod;
+        mul=(mul*i%mod);
+        //mul%=mod;
     }
-    return (cont*mul)%mod;
+    return ((cont%mod)*(mul%mod))%mod;
 }
 
 long long solve(int n)
