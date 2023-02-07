@@ -1,6 +1,0 @@
-          echo "766) con_fin_egresos_15"
-          echo "767) con_fin_estatus_15"
-          echo "768) con_fin_pendientes_15"
-          echo "769) con_fin_proveedoresagentes_15"
-          echo "770) con_fin_proveedoressiniestros_15"
-          echo "771) con_fin_solicitud_15"

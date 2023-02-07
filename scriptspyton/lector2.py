@@ -19,10 +19,10 @@ def run():
             if flag == True :
                 # if i == '':
                 #     i = '8'
-                # if i == '0':
-                #     i='1'
+                #if i == '5':
+                #    i='3'
                 cad = cad+i
-    num=766
+    num=789
     w = open("salida.txt", "w")
     for i in mylist:
         w.write("          echo \"{}) {}\"\n".format(num, i) )

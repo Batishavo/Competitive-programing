@@ -1,36 +1,17 @@
-#include<bits/stdc++.h>
-
-using namespace std;
-
-int t,
-    k,
-    n,
-    arr[50];
-
-int main(){
-
-    scanf( "%d",&t);
-    
-    while(t--){
-        
-        cin>>n>>k;
-        int num=0,
-            cont=1;
-        for(int i=n-1;i>=0;i--){
-            arr[i]=k-num;
-            if(k-(num+cont+1)>1){
-                num+=cont;
-                cont++;
-            }
-            else{
-                num++;
-            }
-        }
-        for(int i=0;i<n;i++){
-            printf("%d ",arr[i]);
-        }
-        cout<<endl;
-    }
-
-    return 0;
-}
+if (string(t1) <= string(t2) || string(t1) >= string(t2))
+        // {
+        //     for (int j = cad.size() - 1; j > i ; j--)
+        //     {
+        //         t3 = cad.substr(j);
+        //         t2 = cad.substr(i , pos);
+        //         cout << t1 << " " << t2 << " " << t3 << endl;
+        //         if ((string(t1) <= string(t2) && string(t3) <= string(t2)) ||
+        //             (string(t2) <= string(t1) && string(t2) <= string(t3)))
+        //         {
+        //             c1 = t1;
+        //             c2 = t2;
+        //             c3 = t3;
+        //             return true;
+        //         }
+        //     }
+        // }

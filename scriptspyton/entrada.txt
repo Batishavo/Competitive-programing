@@ -1,154 +1,66 @@
-x5f5is146usi   aut_srv_kbb_cache                          replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_srv_kbb_cache:v0.3                      *:8030->80/tcp
-l19m1x8eap6k   aut_srv_kbb_gateway                        replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_srv_kbb_gateway:v0.3                    *:8026->80/tcp
-4u4cselb1vcc   aut_srv_kbb_traductor                      replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_srv_kbb_traductor:v0.3                  *:8027->80/tcp
-71lk31n88clj   autt_orquestador                           replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_orquestador:v3.5                       *:8007->80/tcp
-saus2qwedjsa   con_aut_adminagente                        replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_adminagente:v0.5                        *:8075->80/tcp
-v6udnjb89hpu   con_aut_admincuentas                       replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_admincuentas:v0.5                       *:8076->80/tcp
-yyfr9neb8s9b   con_aut_blockchain_operaciones             replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_blockchain_operaciones:v8.3             *:8130->8094/tcp
-p2vmhmkvqzzs   con_aut_cifradosantander                   replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_cifradosantander:5203                   *:8484->8080/tcp
-s3by1q7db15r   con_aut_clasificadorscores                 replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_clasificadorscores:v2.3                 *:8126->80/tcp
-liqbqdvceqwk   con_aut_emisionrastreo                     replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_emisionrastreo:v3.0                     *:8165->80/tcp
-oi6tipwgzfv1    con_aut_flotillascargavalidador           replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_flotillascargavalidador:v31.1           *:8064->80/tcp
-ihu28qoo2xep   con_aut_flotillascotizador                 replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_flotillascotizador:v0.24                *:8065->80/tcp
-dn8gcg5hiezy   con_aut_flotillasemisor                    replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_flotillasemisor:v22.2                   *:8066->80/tcp
-r562wy5e21jc   con_aut_flotillasgateway                   replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_flotillasgateway:v2.2                   *:8062->80/tcp
-45vcoa1rlpe4   con_aut_gestionidriving                    replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_gestionidriving:9.1                     *:8163->80/tcp
-sine82734l6y   con_aut_gestionpaqueteria                  replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_gestionpaqueteria:v0.4                  *:8185->80/tcp
-tsqp7p87c91q   con_aut_gwclasificadorscores               replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_gwclasificadorscores:v0.3               *:8127->80/tcp
-mjqbx2n3abfg   con_aut_gwidriving                         replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_gwidriving:v3.1                         *:704->80/tcp
-s74ru263eulc   con_aut_gwpaqueteria                       replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_gwpaqueteria:v0.3                       *:709->80/tcp
-x1x0c7ysl083   con_aut_idrivingorqrenovar                 replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_idrivingorqrenovar:v1.14                *:8232->80/tcp
-qlojovadgaz6   con_aut_idrivingpaqueteria                 replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_idrivingpaqueteria:v2.2                 *:708->80/tcp
-rclv3qyo2aa7   con_aut_idrivingtskcancelarpol             replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_idrivingtskcancelarpol:v2.5             *:8234->80/tcp
-hwwt114rjq86   con_aut_idrivingtskrenovarpol              replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_idrivingtskrenovarpol:v2.5              *:8233->80/tcp
-s62ohzau3sj3   con_aut_idrivingtsksynccmt                 replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_idrivingtsksynccmt:v2.7                 *:8235->80/tcp
-hl5zas5fa8wh   con_aut_notifidriving                      replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_notifidriving:v0.4                      *:8184->80/tcp
-ejyqzkgodyi7   con_aut_soautosclientes                    replicated   2/2        10.26                                                                                            .101.83:8083/img_aut_soautosclientes:v2.6                    *:8018->80/tcp
-my8myvmr0xbi   con_aut_soautosemision                     replicated   2/2        10.26                                                                                            .101.83:8083/img_aut_soautosemision:v3.3                     *:8016->80/tcp
-xozhqa6yl6t0   con_aut_soautosrenovacion                  replicated   2/2        10.26                                                                                            .101.83:8083/img_aut_soautosrenovacion:v2.6                  *:8020->80/tcp
-ewltqs25rbir   con_aut_srv_kbb_bitacora                   replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_srv_kbb_bitacora:v0.5                   *:8029->80/tcp
-fp6eri3lre35   con_aut_srv_kbb_composicion                replicated   1/1        10.26                                                                                            .101.83:8083/img_aut_srv_kbb_composicion:v0.7                *:8028->80/tcp
-scspkors39q8   con_autt_srvbitacora                       replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_srvbitacora:v1.1                       *:8052->80/tcp
-2fa7y3kqytjz   con_autt_srvcancelacion                    replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_srvcancelacion:v4.8                    *:8008->80/tcp
-8dmgqchcspjl   con_autt_srvemision                        replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_srvemision:v6.6                        *:8005->80/tcp
-xzp9cmd7zw6c   con_autt_srvendosos                        replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_srvendosos:v1.6                        *:8006->80/tcp
-o6jv3qibrxjx   con_autt_turistas_busqueda_avanzada        replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_busqueda_avanzada:v2.2        *:8108->80/tcp
-5mdd3rxu6e3s   con_autt_turistas_cancelacionwebturistas   replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_cancelacionwebturistas:v3.2   *:8111->80/tcp
-qzir74mddy5k   con_autt_turistas_emisionwebturistas       replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_emisionwebturistas:v4.3       *:8083->80/tcp
-scags6v6pi3j   con_autt_turistas_endoso_datoscliente      replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_endoso_datoscliente:v2.8      *:8110->80/tcp
-ue21otc53yef   con_autt_turistas_endoso_datosvehiculo     replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_endoso_datosvehiculo:v1.5     *:8109->80/tcp
-y230zy04vafj   con_autt_turistas_entidadagentes           replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_entidadagentes:v2.1           *:8106->80/tcp
-2xf3bj3e0eru   con_autt_turistas_entidadclientes          replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_entidadclientes:v2.3          *:8078->80/tcp
-p7heww5vy5pe   con_autt_turistas_entidadcoberturas        replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_entidadcoberturas:v2.1        *:8081->80/tcp
-r6p1d13p8rf8   con_autt_turistas_entidadfiscal            replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_entidadfiscal:v1.5            *:8079->80/tcp
-85ww0jykclef   con_autt_turistas_entidadubicaciones       replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_entidadubicaciones:v1.1       *:8077->80/tcp
-o4noj9qw11um   con_autt_turistas_entidadvehiculos         replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_entidadvehiculos:v1.1         *:8087->80/tcp
-iqcn09el9bo4   con_autt_turistas_iswebturistas            replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_iswebturistas:v3.1            *:8088->80/tcp
-0vgpabr7vvxb   con_autt_turistas_reportes                 replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_reportes:v1.4                 *:8107->80/tcp
-kxuzfu240ivq   con_autt_turistas_seguridad                replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_seguridad:v3.1                *:8084->80/tcp
-h2ftz4qo232n   con_autt_turistas_webcotizacion            replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_webcotizacion:v3.2            *:8082->80/tcp
-lreyw4yfcjle   con_autt_turistas_webtourist               replicated   1/1        10.26                                                                                            .101.83:8083/img_autt_turistas_webtourist:v12.2              *:8086->80/tcp
-7xtr1dle32kz   con_dan_consultasc                         replicated   1/1        10.26                                                                                            .101.83:8083/img_dan_consultasc:v0.6                         *:8380->80/tcp
-2ym9p3qedcm6   con_dan_cotizacionsc                       replicated   1/1        10.26                                                                                            .101.83:8083/img_dan_cotizacionsc:v0.7                       *:8377->80/tcp
-fahep01wcqna   con_dan_danosconsulta                      replicated   0/2        10.26                                                                                            .101.83:8083/img_dan_danosconsulta:v0.15                     *:8012->80/tcp
-ow33av6jvheb   con_dan_danosreporte                       replicated   2/2        10.26                                                                                            .101.83:8083/img_dan_danosreporte:v2.8                       *:8013->80/tcp
-kt6bunimoqu1   con_dan_emisionsc                          replicated   1/1        10.26                                                                                            .101.83:8083/img_dan_emisionsc:v0.8                          *:8379->80/tcp
-gc6xq1b14o8b   con_dan_guardadosc                         replicated   1/1        10.26                                                                                            .101.83:8083/img_dan_guardadosc:v0.10                        *:8378->80/tcp
-hzdsbfmp1jg3   con_dan_gwsocioscomerciales                replicated   1/1        10.26                                                                                            .101.83:8083/img_dan_gwsocioscomerciales:v0.5                *:737->80/tcp
-e78g3m59t6cy   con_dan_notificarenovacionesdanos          replicated   1/1        10.26                                                                                            .101.83:8083/img_dan_notificarenovacionesdanos:v1.13         *:8148->80/tcp
-6za44xq6ivhq   con_dan_validacionrenovacionesdanos        replicated   1/1        10.26                                                                                            .101.83:8083/img_dan_validacionrenovacionesdanos:v7.1        *:8147->80/tcp
-ypdk1w98oeak   con_dig_backendintranet                    replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_backendintranet:v3.6                    *:8175->80/tcp
-0l14ue3mfpe7   con_dig_chatbotinfopol                     replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_chatbotinfopol:v1.0                     *:8204->80/tcp
-yxfhzkzvi7ud   con_dig_chatbotpagogtw                     replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_chatbotpagogtw:v1.5                     *:717->80/tcp
-ce0q953r4db4   con_dig_gmm                                replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_gmm:v2.1                                *:714->80/tcp
-uteh1t6u6cxx   con_dig_gwhealth                           replicated   2/2        10.26                                                                                            .101.83:8083/img_dig_gwhealth:v1.1                           *:713->80/tcp
-um1azxtm2i8p   con_dig_gwsopromotorias                    replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_gwsopromotorias:v1.12                   *:8196->80/tcp
-miop50tnew6h   con_dig_gwventaenlinea                     replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_gwventaenlinea:v1.8                     *:8128->80/tcp
-m2kvj47n4j57   con_dig_portalintranethdi                  replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_portalintranethdi:v4.4                  *:706->80/tcp
-x8wv993km2fs   con_dig_proxysecurityservice               replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_proxysecurityservice:v3.5               *:8032->80/tcp
-75j1vkwvmcrg   con_dig_smartoffice                        replicated   2/2        10.26                                                                                            .101.83:8083/img_dig_smartoffice:v11.15                      *:8010->80/tcp
-avvfwzi941c9   con_dig_smartpaginacion                    replicated   4/4        10.26                                                                                            .101.83:8083/img_dig_smartpaginacion:v1.1                    *:8167->80/tcp
-z9c1xa70qqh5   con_dig_smartservice                       replicated   2/2        10.26                                                                                            .101.83:8083/img_dig_smartservice:v10.1                      *:8025->80/tcp
-e7wsg8oc5zvy   con_dig_soaca                              replicated   2/2        10.26                                                                                            .101.83:8083/img_dig_soaca:v2.8                              *:8014->80/tcp
-jobfnl7ltxkx   con_dig_srvsopagentes                      replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_srvsopagentes:v1.4                      *:8199->80/tcp
-xo248l5213uc   con_dig_srvsopoperaciones                  replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_srvsopoperaciones:v1.5                  *:8200->80/tcp
-ok5f0gj0hx75   con_dig_worker_reintentosreporte           replicated   1/1        10.26                                                                                            .101.83:8083/img_dig_worker_reintentosreporte:v0.4
-iud9b6j4a47v   con_fin_estatus                            replicated   1/1        10.26                                                                                            .101.83:8083/img_fin_estatus:v6.3                            *:8091->8080/tcp
-hw9b4e4vtgj8   con_fin_obtreferenciapago                  replicated   2/2        10.26                                                                                            .101.83:8083/img_fin_obtreferenciapago:v0.9                  *:8228->80/tcp
-xl44kdj0gijw   con_fin_pendientes                         replicated   1/1        10.26                                                                                            .101.83:8083/img_fin_pendientes:v9.5                         *:8090->8080/tcp
-q7zyi6ycnlxg   con_fin_proveedoresagentes                 replicated   0/1        10.26                                                                                            .101.83:8083/img_fin_proveedoresagentes:v2.11                *:8056->8080/tcp
-opa9kbmno8oq   con_fin_proveedoressiniestros              replicated   1/1        10.26                                                                                            .101.83:8083/img_fin_proveedoressiniestros:v6.1              *:8057->8080/tcp
-avd4pwb8ev3s   con_fin_rcagentesprep                      replicated   1/1        10.26                                                                                            .101.83:8083/img_fin_rcagentesprep:v0.4                      *:8194->80/tcp
-raypk5ff9j6n   con_fin_respuesta                          replicated   1/1        10.26                                                                                            .101.83:8083/img_fin_respuesta:v3.2                          *:8097->8080/tcp
-txsiuvk716ja   con_fin_solicitud                          replicated   2/3        10.26                                                                                            .101.83:8083/img_fin_solicitud:v10.4                         *:8092->8080/tcp
-7pnc76hhsjft   con_fin_tskdiasgraciarecibo                replicated   2/2        10.26                                                                                            .101.83:8083/img_fin_tskdiasgraciarecibo:v0.7                *:8227->80/tcp
-hwky21m2mmgz   con_gmm_admongmm                           replicated   1/1        10.26                                                                                            .101.83:8083/img_gmm_admongmm:v3.2                           *:8365->80/tcp
-8o5r5fyztqei   con_gmm_cotizaciongmm                      replicated   1/1        10.26                                                                                            .101.83:8083/img_gmm_cotizaciongmm:v2.3                      *:8367->80/tcp
-058mh0cn8ms2   con_gmm_gwemihealth                        replicated   1/1        10.26                                                                                            .101.83:8083/img_gmm_gwemihealth:v7.11                       *:8362->80/tcp
-z87ysg9w4o8f   con_gmm_gwsinhealth                        replicated   2/2        10.26                                                                                            .101.83:8083/img_gmm_gwsinhealth:v0.4                        *:8292->80/tcp
-l2tkkdr4r6ix   con_gmm_productosglobalesgmm               replicated   1/1        10.26                                                                                            .101.83:8083/img_gmm_productosglobalesgmm:v3.2               *:736->80/tcp
-zg6iy2dw77w1   con_gmm_siniestrosgmm                      replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_siniestrosgmm:latest                    *:8293->80/tcp
-hj32b6o72kdj   con_gmm_solicitudgmm                       replicated   1/1        10.26                                                                                            .101.83:8083/img_gmm_solicitudgmm:v11.11                     *:8363->80/tcp
-6j2r25g31sg5   con_grl_bitacorabpmimplementaciones        replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_bitacorabpmimplementaciones:v0.10       *:8162->80/tcp
-v9k60ixjq27c   con_grl_bitacorahdi                        replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_bitacorahdi:v0.3                        *:8059->80/tcp
-zroknd81pelb   con_grl_cambiopassword_portal              replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_cambiopassword_portal:v1.5              *:720->80/tcp
-5yoxxkawcm3l   con_grl_cliuni_deduplicaciononline         replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_cliuni_deduplicaciononline:v1.1         *:8188->80/tcp
-2mvhej344o6a   con_grl_cliuni_normalizaciondeyde          replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_cliuni_normalizaciondeyde:v1.1          *:8187->80/tcp
-zab88e56ef1b   con_grl_cliuni_normalizacionpendiente      replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_cliuni_normalizacionpendiente:v1.1      *:8186->80/tcp
-of6a2obq3wl6   con_grl_cliuni_normalizacionsql            replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_cliuni_normalizacionsql:v1.2            *:8189->80/tcp
-vz95q8j10gvd   con_grl_correorabbitworker                 replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_correorabbitworker:v1.3                 *:8179->80/tcp
-ylo1sw4ow8rl   con_grl_desencriptador                     replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_desencriptador:v0.9                     *:8174->80/tcp
-ngcui2cdbrqi   con_grl_encuestas                          replicated   2/2        10.26                                                                                            .101.83:8083/img_srv_grl_encuestas:v1.1                      *:8177->80/tcp
-d0j94jy1690q   con_grl_gwcambiopassword                   replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_gwcambiopassword:v0.4                   *:8229->80/tcp
-s8ha5850kdte   con_grl_seguridad_sso                      replicated   2/2        10.26                                                                                            .101.83:8083/img_srv_grl_seguridad_sso:v4.3                  *:8176->80/tcp
-4s2fmjp0v6ic   con_grl_srvCambioPassword                  replicated   1/1        10.26                                                                                            .101.83:8083/img_grl_srvcambiopassword:v0.2                  *:8241->80/tcp
-iho3lufxv03j   con_grl_srv_bsoftgestioncontratos          replicated   2/2        10.26                                                                                            .101.83:8083/img_grl_srv_bsoftgestioncontratos:v0.7          *:8192->80/tcp
-pujcc95mtxtg   con_grl_srv_bsofttransaccionescontratos    replicated   2/2        10.26                                                                                            .101.83:8083/img_grl_srv_bsofttransaccionescontratos:v0.7    *:8193->80/tcp
-g3iesr8rig6b   con_portal_cobranza                        replicated   2/2        10.26                                                                                            .101.83:8083/img_fin_portalcobranza:v1.2                     *:3000->3000/tcp
-wuvts7ekbg4d   con_rea_noproporcionalbase                 replicated   1/1        10.26                                                                                            .101.83:8083/img_rea_noproporcionalbase:v0.12                *:8170->80/tcp
-opf8ulkbhbqs   con_rea_noproporcionalminio                replicated   1/1        10.26                                                                                            .101.83:8083/img_rea_noproporcionalminio:v0.9                *:8172->80/tcp
-ysngvd8qv9bm   con_rea_noproporcionalpython               replicated   1/1        10.26                                                                                            .101.83:8083/img_rea_noproporcionalpython:v0.17
-jhdzmpwzqps5   con_rea_noproporcionalrw                   replicated   1/1        10.26                                                                                            .101.83:8083/img_rea_noproporcionalrw:v0.14                  *:8171->80/tcp
-rfzn6ye1353v   con_sin_bpm_srv_bitacorahdi                replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_bitacorahdi:v0.7                *:8038->80/tcp
-ie2wsdlfod2n   con_sin_bpm_srv_bsoftadmonpagos            replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_bsoftadmonpagos:v2.1            *:8046->8080/tcp
-uvmjf9k61nux   con_sin_bpm_srv_bsoftajuste                replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_bsoftajuste:v1.1                *:8042->8080/tcp
-v1qpdtvew60j   con_sin_bpm_srv_bsoftfraudes               replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_bsoftfraudes:v1.1               *:8044->8080/tcp
-d0ipg6nwl6em   con_sin_bpm_srv_bsoftperdidastotales       replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_bsoftperdidastotales:v6.2       *:8039->8080/tcp
-unxs91y3yl18   con_sin_bpm_srv_bsoftsalvamentos           replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_bsoftsalvamentos:v2.1           *:8045->8080/tcp
-y1pkt6wdh96i   con_sin_bpm_srv_bsoftvaluacionreparacion   replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_bsoftvaluacionreparacion:v4.3   *:8043->8080/tcp
-w0di9xdydcd1   con_sin_bpm_srv_gateway                    replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_gateway:v0.7                    *:8033->80/tcp
-6lfj1czz122z   con_sin_bpm_srv_notificaajustadoresbpm     replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_notificaajustadoresbpm:v0.11    *:8036->80/tcp
-ry6lfczk93o7   con_sin_bpm_srv_notificacabinabpm          replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_notificacabinabpm:v1.5          *:8037->80/tcp
-qhxz5p4hjs05   con_sin_bpm_srv_notificaintegralbpm        replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_notificaintegralbpm:v3.6        *:8035->80/tcp
-afuex62ozsp3   con_sin_bpm_srv_validadocumentacionbpm     replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bpm_srv_validadocumentacionbpm:v1.3     *:8034->80/tcp
-k3t3homo9yl6   con_sin_bsoftoperacionespagos              replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bsoftoperacionespagos:v2.1              *:8183->8080/tcp
-4odfu8ukivav   con_sin_bsoftoperacionesreparacion         replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_bsoftoperacionesreparacion:v2.1         *:8191->8080/tcp
-r1upmowwcjq2   con_sin_entvaluacionreparacion             replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_entvaluacionreparacion:v6.7             *:8146->80/tcp
-ydpxfk240z5b   con_sin_expediente                         replicated   1/1        10.26                                                                                            .101.83:8083/img_sin_expediente:v4.6                         *:8180->80/tcp
-pumjq6osjpqt   con_sin_guardaelasticlog                   replicated   1/1        10.26                                                                                            .101.83:8083/img_sin_guardaelasticlog:v0.1                   *:8168->5005/tcp
-2kxqzgc90045   con_sin_gwmovil                            replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_gwmovil:v0.8                            *:712->80/tcp
-ihut6a5ehvm7   con_sin_gwperdidatotal                     replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_gwperdidatotal:v2.4                     *:8206->80/tcp
-wa48pfux0d1k   con_sin_gwportalasegurado                  replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_gwportalasegurado:v8.5                  *:8139->80/tcp
-pngcysamosr5   con_sin_gwvisor                            replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_gwvisor:v5.4                            *:8205->80/tcp
-wrcwub2lwi4y   con_sin_htc_procesos_gmm                   replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_htc_procesos_gmm:v1.2                   *:8373->80/tcp
-z1some6xg9ci   con_sin_monitor_ajustador                  replicated   1/1        10.26                                                                                            .101.83:8083/img_sin_monitorajustador:v4.1                   *:8002->80/tcp
-njvczvu6ctl7   con_sin_monitorajustadorpm                 replicated   1/1        10.26                                                                                            .101.83:8083/img_sin_portalmonitor:v4.1                      *:8022->80/tcp
-e7m9d36q01r9   con_sin_notificaprocesopagos               replicated   1/1        10.26                                                                                            .101.83:8083/img_sin_notificaprocesopagos:v2.1               *:8182->80/tcp
-kb0lzixt6nwi   con_sin_notificasalvamentos                replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_notificasalvamentos:v0.2                *:8237->80/tcp
-qgfyqi7g4jbp   con_sin_operacionrastreo                   replicated   1/1        10.26                                                                                            .101.83:8083/img_sin_operacionrastreo:v1.1                   *:8166->80/tcp
-n0jx6n6cl87g   con_sin_portalasegurado_comunicacion       replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_portalasegurado_comunicacion:v1.2       *:8145->80/tcp
-tgzqezbmstz9   con_sin_portalasegurado_obtPoliza          replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_portalasegurado_obtpoliza:v8.3          *:8040->80/tcp
-ixig0tpigxo1   con_sin_sosiniestros                       replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_sosiniestros:v3.6                       *:8011->80/tcp
-kdwluvjydwh6   con_sin_tskajuste                          replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_tskajuste:v4.3                          *:8144->80/tcp
-ebc1v8vfgqzg   con_sin_tskreporte                         replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_tskreporte:v4.7                         *:8141->80/tcp
-6lcalm5s9dcf   con_sin_tskubicacion                       replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_tskubicacion:v0.8                       *:8143->80/tcp
-vph2tdoizlnl   con_sin_worker_estatusajustador            replicated   1/1        10.26                                                                                            .101.83:8083/img_sin_worker_estatusajustador:v1.1            *:8047->5001/tcp
-ie2kxuqu5lo7   con_sin_worker_posiciones                  replicated   1/1        10.26                                                                                            .101.83:8083/img_sin_worker_posiciones:v2.0                  *:8049->5002/tcp
-lnqje8krouux   con_suscribot_servicios_externo            replicated   2/2        10.26                                                                                            .101.83:8083/img_suscribot_servicios_externo:v2.5            *:8003->80/tcp
-pxe6na6smd9d   edifact_electronica                        replicated   0/1        10.26                                                                                            .101.83:8083/img_fin_srv_edifact_electronica:v3.6            *:8051->8080/tcp
-r3djm75h03ub   fin_egresos                                replicated   1/1        10.26                                                                                            .101.83:8083/img_fin_egresos:v4.1                            *:8060->8080/tcp
-ifrpf4ecio1t   fin_ingresos                               replicated   1/1        10.26                                                                                            .101.83:8083/img_fin_ingresos:v3.8                           *:8055->8080/tcp
-y1bl03ut2w4h   hdi_sin_elastic_cabina                     replicated   0/1        10.26                                                                                            .101.83:8083/img_sin_elastic_cabina:v0.2                     *:8024->9200/tcp, *:8050->                                                                                            9300/tcp
-95bcfttc2797   itcomserv                                  replicated   2/2        10.26                                                                                            .101.83:8083/img_sin_itcomserv:v2.3                          *:8000->4000/tcp, *:45900-                                                                                            >45900/udp
-xrl4kjyprms0   portainer_agent                            global       3/3        porta                                                                                            iner/agent:latest
-yelfvzdjflll   portainer_portainer                        replicated   1/1        porta                                                                                            iner/portainer-ce:2.12                                       *:8121->9000/tcp, *:8122->                                                                                            8000/tcp
+4
+con_aut_adminagente
+
+4
+con_aut_admincuentas
+
+4
+con_aut_clasificadorscores
+
+4
+con_aut_emisionrastreo
+
+4
+con_aut_flotillascargavalidador
+
+4
+con_aut_flotillascotizador
+
+4
+con_aut_flotillasemisor
+
+4
+con_aut_flotillasgateway
+
+4
+con_aut_gestionidriving
+
+4
+con_aut_gwclasificadorscores
+
+4
+con_aut_gwidriving
+
+4
+aut_srv_kbb_bitacora
+
+4
+aut_srv_kbb_cache
+
+4
+aut_srv_kbb_composicion
+
+4
+aut_srv_kbb_gateway
+
+4
+aut_srv_kbb_traductor
+
+4
+con_grl_bitacorahdi
+
+4
+con_grl_cliuni_deduplicaciononline
+
+4
+con_grl_cliuni_normalizaciondeyde
+
+4
+con_grl_cliuni_normalizacionpendiente
+
+4
+con_grl_cliuni_normalizacionsql
+
+4
+con_grl_correorabbitworker
+
