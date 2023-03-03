@@ -1,208 +1,305 @@
-if [ $nombre_servicio == "con_dig_proxysecurityservice_04" ] 
-          then
-          /root/dockers/con_dig_proxysecurityservice_04/levanta_dig_proxysecurityservice.sh
-          fi
-          if [ $nombre_servicio == "con_fin_obtreferenciapago_04" ] 
-          then
-          /root/dockers/con_fin_obtreferenciapago_04/levanta_fin_obtreferenciapago.sh
-          fi
-          if [ $nombre_servicio == "con_fin_tskdiasgraciarecibo_04" ] 
-          then
-          /root/dockers/con_fin_tskdiasgraciarecibo_04/levanta_fin_tskdiasgraciarecibo.sh
-          fi
-          if [ $nombre_servicio == "con_gmm_admongmm_04" ] 
-          then
-          /root/dockers/con_gmm_admongmm_04/levanta_gmm_admongmm.sh
-          fi
-          if [ $nombre_servicio == "con_gmm_cotizaciongmm_04" ] 
-          then
-          /root/dockers/con_gmm_cotizaciongmm_04/levanta_gmm_cotizaciongmm.sh
-          fi
-          if [ $nombre_servicio == "con_gmm_gwemihealth_04" ] 
-          then
-          /root/dockers/con_gmm_gwemihealth_04/levanta_gmm_gwemihealth.sh
-          fi
-          if [ $nombre_servicio == "con_gmm_gwsinhealth_04" ] 
-          then
-          /root/dockers/con_gmm_gwsinhealth_04/levanta_gmm_gwsinhealth.sh
-          fi
-          if [ $nombre_servicio == "con_gmm_siniestrosgmm_04" ] 
-          then
-          /root/dockers/con_gmm_siniestrosgmm_04/levanta_gmm_siniestrosgmm.sh
-          fi
-          if [ $nombre_servicio == "con_gmm_solicitudgmm_04" ] 
-          then
-          /root/dockers/con_gmm_solicitudgmm_04/levanta_gmm_solicitudgmm.sh
-          fi
-          if [ $nombre_servicio == "con_grl_encuestas_04" ] 
-          then
-          /root/dockers/con_grl_encuestas_04/levanta_grl_encuestas.sh
-          fi
-          if [ $nombre_servicio == "con_grl_gwblac_04" ] 
-          then
-          /root/dockers/con_grl_gwblac_04/levanta_grl_gwblac.sh
-          fi
-          if [ $nombre_servicio == "con_grl_gwencontrack_04" ] 
-          then
-          /root/dockers/con_grl_gwencontrack_04/levanta_grl_gwencontrack.sh
-          fi
-          if [ $nombre_servicio == "con_grl_seguridad_sso_04" ] 
-          then
-          /root/dockers/con_grl_seguridad_sso_04/levanta_grl_seguridad_sso.sh
-          fi
-          if [ $nombre_servicio == "con_siniestros_monitor_ajustador_04" ] 
-          then
-          /root/dockers/con_siniestros_monitor_ajustador_04/levanta_siniestros_monitor_ajustador.sh
-          fi
-          if [ $nombre_servicio == "con_siniestros_monitor_ajustador_pm_04" ] 
-          then
-          /root/dockers/con_siniestros_monitor_ajustador_pm_04/levanta_siniestros_monitor_ajustador_pm.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_bitacorahdi_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_bitacorahdi_04/levanta_sin_bpm_srv_bitacorahdi.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_bsoftadmonpagos_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_bsoftadmonpagos_04/levanta_sin_bpm_srv_bsoftadmonpagos.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_bsoftajuste_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_bsoftajuste_04/levanta_sin_bpm_srv_bsoftajuste.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_bsoftcabina_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_bsoftcabina_04/levanta_sin_bpm_srv_bsoftcabina.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_bsoftfraudes_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_bsoftfraudes_04/levanta_sin_bpm_srv_bsoftfraudes.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_bsoftperdidastotales_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_bsoftperdidastotales_04/levanta_sin_bpm_srv_bsoftperdidastotales.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_bsoftsalvamentos_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_bsoftsalvamentos_04/levanta_sin_bpm_srv_bsoftsalvamentos.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_bsoftvaluacionreparacion_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_bsoftvaluacionreparacion_04/levanta_sin_bpm_srv_bsoftvaluacionreparacion.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_gateway_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_gateway_04/levanta_sin_bpm_srv_gateway.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_notficaajustadoresbpm_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_notficaajustadoresbpm_04/levanta_sin_bpm_srv_notficaajustadoresbpm.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_notficacabinabpm_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_notficacabinabpm_04/levanta_sin_bpm_srv_notficacabinabpm.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_notficaintegralbpm_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_notficaintegralbpm_04/levanta_sin_bpm_srv_notficaintegralbpm.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bpm_srv_validadocumentacionbpm_04" ] 
-          then
-          /root/dockers/con_sin_bpm_srv_validadocumentacionbpm_04/levanta_sin_bpm_srv_validadocumentacionbpm.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bsoftoperacionespagos_04" ] 
-          then
-          /root/dockers/con_sin_bsoftoperacionespagos_04/levanta_sin_bsoftoperacionespagos.sh
-          fi
-          if [ $nombre_servicio == "con_sin_bsoftoperacionesreparacion_04" ] 
-          then
-          /root/dockers/con_sin_bsoftoperacionesreparacion_04/levanta_sin_bsoftoperacionesreparacion.sh
-          fi
-          if [ $nombre_servicio == "con_sin_dispatcher_cabina_04" ] 
-          then
-          /root/dockers/con_sin_dispatcher_cabina_04/levanta_sin_dispatcher_cabina.sh
-          fi
-          if [ $nombre_servicio == "con_sin_endosocondcobroautos_04" ] 
-          then
-          /root/dockers/con_sin_endosocondcobroautos_04/levanta_sin_endosocondcobroautos.sh
-          fi
-          if [ $nombre_servicio == "con_sin_endosocondcobrodan_04" ] 
-          then
-          /root/dockers/con_sin_endosocondcobrodan_04/levanta_sin_endosocondcobrodan.sh
-          fi
-          if [ $nombre_servicio == "con_sin_entvaluacionreparacion_04" ] 
-          then
-          /root/dockers/con_sin_entvaluacionreparacion_04/levanta_sin_entvaluacionreparacion.sh
-          fi
-          if [ $nombre_servicio == "con_sin_expediente_04" ] 
-          then
-          /root/dockers/con_sin_expediente_04/levanta_sin_expediente.sh
-          fi
-          if [ $nombre_servicio == "con_sin_gwmovil_04" ] 
-          then
-          /root/dockers/con_sin_gwmovil_04/levanta_sin_gwmovil.sh
-          fi
-          if [ $nombre_servicio == "con_sin_gwperdidatotal_04" ] 
-          then
-          /root/dockers/con_sin_gwperdidatotal_04/levanta_sin_gwperdidatotal.sh
-          fi
-          if [ $nombre_servicio == "con_sin_gwportalasegurado_04" ] 
-          then
-          /root/dockers/con_sin_gwportalasegurado_04/levanta_sin_gwportalasegurado.sh
-          fi
-          if [ $nombre_servicio == "con_sin_gwvisor_04" ] 
-          then
-          /root/dockers/con_sin_gwvisor_04/levanta_sin_gwvisor.sh
-          fi
-          if [ $nombre_servicio == "con_sin_htc_procesos_gmm_04" ] 
-          then
-          /root/dockers/con_sin_htc_procesos_gmm_04/levanta_sin_htc_procesos_gmm.sh
-          fi
-          if [ $nombre_servicio == "con_sin_notficaprocesopagos_04" ] 
-          then
-          /root/dockers/con_sin_notficaprocesopagos_04/levanta_sin_notficaprocesopagos.sh
-          fi
-          if [ $nombre_servicio == "con_sin_operacionrastreo_04" ] 
-          then
-          /root/dockers/con_sin_operacionrastreo_04/levanta_sin_operacionrastreo.sh
-          fi
-          if [ $nombre_servicio == "con_sin_portalasegurado_comunicacion_04" ] 
-          then
-          /root/dockers/con_sin_portalasegurado_comunicacion_04/levanta_sin_portalasegurado_comunicacion.sh
-          fi
-          if [ $nombre_servicio == "con_sin_portalasegurado_obtPoliza_04" ] 
-          then
-          /root/dockers/con_sin_portalasegurado_obtPoliza_04/levanta_sin_portalasegurado_obtPoliza.sh
-          fi
-          if [ $nombre_servicio == "con_sin_tskajuste_04" ] 
-          then
-          /root/dockers/con_sin_tskajuste_04/levanta_sin_tskajuste.sh
-          fi
-          if [ $nombre_servicio == "con_sin_tskformatosfacturacion_04" ] 
-          then
-          /root/dockers/con_sin_tskformatosfacturacion_04/levanta_sin_tskformatosfacturacion.sh
-          fi
-          if [ $nombre_servicio == "con_sin_tskreporte_04" ] 
-          then
-          /root/dockers/con_sin_tskreporte_04/levanta_sin_tskreporte.sh
-          fi
-          if [ $nombre_servicio == "con_sin_tsktaller_04" ] 
-          then
-          /root/dockers/con_sin_tsktaller_04/levanta_sin_tsktaller.sh
-          fi
-          if [ $nombre_servicio == "con_sin_tskubicacion_04" ] 
-          then
-          /root/dockers/con_sin_tskubicacion_04/levanta_sin_tskubicacion.sh
-          fi
-          if [ $nombre_servicio == "con_sin_worker_estatusajustador_04" ] 
-          then
-          /root/dockers/con_sin_worker_estatusajustador_04/levanta_sin_worker_estatusajustador.sh
-          fi
-          if [ $nombre_servicio == "con_sin_worker_posiciones_04" ] 
-          then
-          /root/dockers/con_sin_worker_posiciones_04/levanta_sin_worker_posiciones.sh
-          fi
-          if [ $nombre_servicio == "con_dispatcher_cabina_04" ] 
-          then
-          /root/dockers/con_dispatcher_cabina_04/levanta_dispatcher_cabina.sh
-          fi
+4
+con_aut_adminagente_24
+
+4
+con_aut_admincuentas_24
+
+4
+con_aut_clasificadorscores_24
+
+4
+con_aut_emisionrastreo_24
+
+4
+con_aut_flotillascargavalidador_24
+
+4
+con_aut_flotillascotizador_24
+
+4
+con_aut_flotillasemisor_24
+
+4
+con_aut_flotillasgateway_24
+
+4
+con_aut_gestionidriving_24
+
+4
+con_aut_gwclasificadorscores_24
+
+4
+con_aut_gwidriving_24
+
+4
+con_aut_srv_kbb_bitacora_24
+
+4
+con_aut_srv_kbb_cache_24
+
+4
+con_aut_srv_kbb_composicion_24
+
+4
+con_aut_srv_kbb_gateway_24
+
+4
+con_aut_srv_kbb_traductor_24
+
+4
+con_grl_bitacorahdi_24
+
+4
+con_grl_cliuni_deduplicaciononline_24
+
+4
+con_grl_cliuni_normalizaciondeyde_24
+
+4
+con_grl_cliuni_normalizacionpendiente_24
+
+4
+con_grl_cliuni_normalizacionsql_24
+
+4
+con_grl_correorabbitworker_24
+
+4
+con_dan_notificarenovacionesdanos_24
+
+4
+con_dan_validacionrenovacionesdanos_24
+
+4
+con_fin_estatus_24
+
+4
+con_fin_ingresos_24
+
+4
+con_fin_pendientes_24
+
+4
+con_fin_proveedoresagentes_24
+
+4
+con_fin_proveedoressiniestros_24
+
+4
+con_fin_solicitud_24
+
+4
+con_autt_orquestador_24
+
+4
+con_autt_srvbitacora_24
+
+4
+con_autt_srvcancelacion_24
+
+4
+con_autt_srvemision_24
+
+4
+con_autt_srvendosos_24
+
+4
+con_autt_turistas_busqueda_avanzada_24
+
+4
+con_autt_turistas_cancelacionwebturistas_24
+
+4
+con_autt_turistas_emisionwebturistas_24
+
+4
+con_autt_turistas_endoso_datoscliente_24
+
+4
+con_autt_turistas_endoso_datosvehiculo_24
+
+4
+con_autt_turistas_entidadagentes_24
+
+4
+con_autt_turistas_entidadclientes_24
+
+4
+con_autt_turistas_entidadcoberturas_24
+
+4
+con_autt_turistas_entidadfiscal_24
+
+4
+con_autt_turistas_entidadubicaciones_24
+
+4
+con_autt_turistas_entidadvehiculos_24
+
+4
+con_autt_turistas_iswebturistas_24
+
+4
+con_autt_turistas_reportes_24
+
+4
+con_autt_turistas_seguridad_24
+
+4
+con_autt_turistas_webcotizacion_24
+
+4
+con_autt_turistas_webtourist_24
+
+4
+con_dig_proxysecurityservice_24
+
+4
+con_fin_obtreferenciapago_24
+
+4
+con_fin_tskdiasgraciarecibo_24
+
+4
+con_gmm_admongmm_24
+
+4
+con_gmm_cotizaciongmm_24
+
+4
+con_gmm_gwemihealth_24
+
+4
+con_gmm_gwsinhealth_24
+
+4
+con_gmm_siniestrosgmm_24
+
+4
+con_gmm_solicitudgmm_24
+
+4
+con_grl_encuestas_24
+
+4
+con_grl_gwblac_24
+
+4
+con_grl_gwencontrack_24
+
+4
+con_grl_seguridad_sso_24
+
+4
+con_sin_bpm_srv_bitacorahdi_24
+
+4
+con_sin_bpm_srv_bsoftadmonpagos_24
+
+4
+con_sin_bpm_srv_bsoftajuste_24
+
+4
+con_sin_bpm_srv_bsoftcabina_24
+
+4
+con_sin_bpm_srv_bsoftfraudes_24
+
+4
+con_sin_bpm_srv_bsoftperdidastotales_24
+
+4
+con_sin_bpm_srv_bsoftsalvamentos_24
+
+4
+con_sin_bpm_srv_bsoftvaluacionreparacion_24
+
+4
+con_sin_bpm_srv_gateway_24
+
+4
+con_sin_bpm_srv_notificaajustadoresbpm_24
+
+4
+con_sin_bpm_srv_notificacabinabpm_24
+
+4
+con_sin_bpm_srv_notificaintegralbpm_24
+
+4
+con_sin_bpm_srv_validadocumentacionbpm_24
+
+4
+con_sin_bsoftoperacionespagos_24
+
+4
+con_sin_bsoftoperacionesreparacion_24
+
+4
+con_sin_dispatcher_cabina_24
+
+4
+con_sin_endosocondcobroautos_24
+
+4
+con_sin_endosocondcobrodan_24
+
+4
+con_sin_entvaluacionreparacion_24
+
+4
+con_sin_expediente_24
+
+4
+con_sin_gwmovil_24
+
+4
+con_sin_gwperdidatotal_24
+
+4
+con_sin_gwportalasegurado_24
+
+4
+con_sin_gwvisor_24
+
+4
+con_sin_htc_procesos_gmm_24
+
+4
+con_sin_notificaprocesopagos_24
+
+4
+con_sin_operacionrastreo_24
+
+4
+con_sin_portalasegurado_comunicacion_24
+
+4
+con_sin_portalasegurado_obtPoliza_24
+
+4
+con_sin_tskajuste_24
+
+4
+con_sin_tskformatosfacturacion_24
+
+4
+con_sin_tskreporte_24
+
+4
+con_sin_tsktaller_24
+
+4
+con_sin_tskubicacion_24
+
+4
+con_sin_worker_estatusajustador_24
+
+4
+con_sin_worker_posiciones_24
+
+4
+con_sin_monitor_ajustador_24
+
+4
+con_sin_monitor_ajustador_pm_24
