@@ -1,2 +1,3 @@
-333220842500 
-// 799700028
+freopen("entrada.txt", "r", stdin);
+    // freopen("salida.txt", "w", stdout);
+    
