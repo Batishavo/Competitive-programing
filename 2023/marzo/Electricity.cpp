@@ -17,7 +17,6 @@ bool igual(int i){
     int d=D[i-1],
         m=M[i-1],
         y=Y[i-1];
-    if(m==2){
         if(d==28){
             if((y%4==0 && y%100!=0) || (y%400==0)){
                 d++;
