@@ -3,74 +3,86 @@
 using namespace std;
 
 int t,
-    rx1,
-    ry1,
-    rx2,
-    ry2,
     square1[10],
-    square2[10];
+    square2[10],
+    squares_answer[10];
 
-bool flag = 1;
+bool flag = 0,
+     spaces = 0;
 
-void calculaX(int X1, int X2, int x1, int x2)
+bool equ()
 {
-    if (x1 > X1 && x1 < X2 && x2 > X1 && x2 < X2)
+    for (int i = 0; i < 4; i++)
     {
-        rx1 = x1;
-        rx2 = x2;
-        return;
+        if (square1[i] != square2[i])
+        {
+            return false;
+        }
     }
-    if (x1 > X1 && x1 < X2)
-    {
-        rx1 = x1;
-        rx2 = X2;
-        return;
-    }
-
-    if (x2 > X1 && x2 < X2)
-    {
-        rx1 = X1;
-        rx2 = x2;
-        return;
-    }
-
-    flag = 0;
+    return true;
+    ;
 }
 
-void calculaY(int Y1, int Y2, int y1, int y2)
+bool posible(int square1_ini, int square1_fin, int square2_ini, int square2_fin)
 {
-    if (y1 > Y1 && y1 < Y2 && y2 > Y1 && y2 < Y2)
+
+    if (
+        (square2_ini > square1_ini && square2_ini < square1_fin) ||
+        (square2_fin > square1_ini && square2_fin < square1_fin) ||
+        (square1_ini > square2_ini && square1_ini < square2_fin) ||
+        (square1_fin > square2_ini && square1_fin < square2_fin))
     {
-        ry1 = y1;
-        ry2 = y2;
-        return;
-    }
-    if (y1 > Y1 && y1 < Y2)
-    {
-        ry1 = y1;
-        ry2 = Y2;
-        return;
+        return true;
     }
 
-    if (y2 > Y1 && y2 < Y2)
+    return false;
+}
+
+void printanswer()
+{
+    if (!flag)
     {
-        ry1 = Y1;
-        ry2 = y2;
+        cout << "No Overlap" << endl;
         return;
     }
+    for (int i = 0; i < 4; i++)
+    {
+        cout << squares_answer[i];
+        if (i != 3)
+        {
+            cout << " ";
+        }
+    }
+    cout << endl;
+}
 
-    flag = 0;
+int menor(int square1, int square2)
+{
+    return max(square1,square2);
+}
+
+int mayor(int square1, int square2)
+{
+    return min(square1,square2);
 }
 
 int main()
 {
-    freopen("entrada.txt", "r", stdin);
-    freopen("salida.txt", "w", stdout);
+    // freopen("entrada.txt", "r", stdin);
+    // freopen("salida.txt", "w", stdout);
     scanf("%d", &t);
 
     while (t--)
     {
-
+        flag = 0;
+        if (!spaces)
+        {
+            spaces = 1;
+        }
+        else
+        {
+            cout << endl;
+        }
         for (int i = 0; i < 4; i++)
         {
             cin >> square1[i];
@@ -80,97 +92,48 @@ int main()
         {
             cin >> square2[i];
         }
-        int cont = 0;
-        for (int i = 0; i < 4; i++)
-        {
-            if (square1[i] == square2[i])
-            {
-                cont++;
-            }
-        }
-        if (cont == 4)
+        ////////////////////////////////
+        if (equ())
         {
             for (int i = 0; i < 4; i++)
             {
-                cout << square2[i];
-                if (i != 3)
-                {
-                    cout << " ";
-                }
-                cout << endl;
+                squares_answer[i] = square1[i];
             }
-            continue;
+            flag = 1;
         }
-        // TODO : si algun lado es igual
-
-        flag = 1;
-        if (square1[0] == square2[0] && square1[2] == square2[2])
+        else if (
+            square1[0] == square2[0] &&
+            square1[2] == square2[2] &&
+            posible(square1[1], square1[3], square2[1], square2[3]))
         {
-            if (square1[1] - square1[3] > square2[1] - square2[3])
-            {
-                calculaY(square1[1], square1[3], square2[1], square2[3]);
-            }
-            else
-            {
-                calculaY(square2[1], square2[3], square1[1], square1[3]);
-            }
-            if (flag)
-            {
-                cout << square1[0] << " " << ry1 << " " << square1[2] << " " << ry2 << endl<<endl;
-            }
-            else
-            {
-                cout << "No Overlap"<<endl<<endl;
-            }
-            continue;
+            squares_answer[0] = square1[0];
+            squares_answer[2] = square1[2];
+            squares_answer[1] = menor(square1[1], square2[1]);
+            squares_answer[3] = mayor(square1[3], square2[3]);
+            flag = 1;
         }
-
-        if (square1[1] == square2[1] && square1[3] == square2[3])
+        else if (
+            square1[1] == square2[1] &&
+            square1[3] == square2[3] &&
+            posible(square1[0], square1[2], square2[0], square2[2]))
         {
-            if (square1[2] - square1[0] > square2[2] - square2[0])
-            {
-                calculaX(square1[0], square1[2], square2[0], square2[2]);
-            }
-            else
-            {
-                calculaX(square2[0], square2[2], square1[0], square1[2]);
-            }
-            if (flag)
-            {
-                cout << rx1 << " " << square1[1] << " " << rx2 << " " << square1[2] << endl<<endl;
-            }
-            else
-            {
-                cout << "No Overlap"<<endl<<endl;
-            }
-            continue;
+            squares_answer[1] = square1[1];
+            squares_answer[3] = square1[3];
+            squares_answer[0] = menor(square1[0], square2[0]);
+            squares_answer[2] = mayor(square1[2], square2[2]);
+            flag = 1;
         }
-        ////////////////////////////////////////////////////////////////////////////////
-        if (square1[2] - square1[0] > square2[2] - square2[0])
+        else if (
+            posible(square1[1], square1[3], square2[1], square2[3]) &&
+            posible(square1[0], square1[2], square2[0], square2[2]))
         {
-            calculaX(square1[0], square1[2], square2[0], square2[2]);
+            squares_answer[0] = menor(square1[0], square2[0]);
+            squares_answer[1] = menor(square1[1], square2[1]);
+            squares_answer[2] = mayor(square1[2], square2[2]);
+            squares_answer[3] = mayor(square1[3], square2[3]);
+            flag = 1;
         }
-        else
-        {
-            calculaX(square2[0], square2[2], square1[0], square1[2]);
-        }
-        if (square1[1] - square1[3] > square2[1] - square2[3])
-        {
-            calculaY(square1[1], square1[3], square2[1], square2[3]);
-        }
-        else
-        {
-            calculaY(square2[1], square2[3], square1[1], square1[3]);
-        }
-
-        if (flag)
-        {
-            cout << rx1 << " " << ry1 << " " << rx2 << " " << ry2 << endl<<endl;
-        }
-        else
-        {
-            cout << "No Overlap"<<endl<<endl;
-        }
+        printanswer();
     }
 
     return 0;
