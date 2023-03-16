@@ -48,8 +48,8 @@ void bynary_search()
 
 int main()
 {
-    freopen("entrada.txt", "r", stdin);
-    freopen("salida.txt", "w", stdout);
+    // freopen("entrada.txt", "r", stdin);
+    // freopen("salida.txt", "w", stdout);
 
     cin >> n;
     long long ant = 0;
