@@ -1,29 +1,36 @@
-#include <cstdio>
-#include <cmath>
+#include<bits/stdc++.h>
 
-const int N = 1000010;
+using namespace std;
 
-double y[N], mx[N];
+int p,
+    a,
+    b,
+    d,
+    c,
+    n;
 
-int main()
-{
-    int p, a, b, c, d, n;
-    while (scanf("%d%d%d%d%d%d", &p, &a, &b, &c, &d, &n) == 6)
-    {
-        if (n == 1)
-        {
-            puts("0");
-            continue;
+double price(int k){
+    return p*(sin(a*k+b)+cos(c*k+d)+2);
+}
+
+int main(){
+
+    while(cin>>p>>a>>b>>c>>d>>n){
+        double mayor=price(1),
+            answered=0;
+        for(int i=2;i<=n;i++){
+            double aux=price(i);
+            if(aux>mayor){
+                mayor=aux;
+            }
+            else{
+                double tmp=mayor-aux;
+                answered=max(answered,tmp);
+            }
         }
-        for (int i = 1; i <= n; ++i)
-        {
-            y[i] = p * (sin(a * i + b) + cos(c * i + d) + 2);
-            mx[i] = fmax(mx[i - 1], y[i]);
-        }
-        double ans = 0;
-        for (int i = 2; i <= n; ++i)
-            ans = fmax(ans, mx[i - 1] - y[i]);
-        printf("%.10lf\n", ans);
+        printf("%.9lf\n",answered);
     }
+    
+
     return 0;
 }
