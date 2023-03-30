@@ -6,48 +6,58 @@ const int limit = 1005;
 
 int n,
     k,
-    arr[limit];
+    arr[limit],
+    total;
 
 int main()
 {
-
-    cin >> n >> k;
+    scanf("%d %d", &n, &k);
 
     if (n <= 2)
     {
-        cout << "-1" << endl;
+        printf("-1\n");
     }
     else
     {
         int num = ((n - 1) * (n)) / 2,
-            total = k * n,
-            pos = 0,
-            ini=0;
-
+            mol = num % k,
+            cant = num / k;
         if (k <= num / n)
         {
-            cout << total << endl;
+            printf("%d\n", n * k);
             for (int i = 1; i <= n; i++)
             {
-                for (int j = 1; j <=k; j++)
+                for (int j = i + 1; j <= n; j++)
                 {
-                    int next = (i + j + 1) % n +1;
                     if (arr[i] < k)
                     {
                         arr[i]++;
-                        cout << i << " " << next << endl;
+                        printf("%d %d\n", i, j);
+                        if (arr[i] == k)
+                            total++;
                     }
-                    else 
+                    else if (arr[j] < k)
                     {
-                        cout << next << " " << i << endl;
-                        arr[next]++;
+                        printf("%d %d\n", j, i);
+                        arr[j]++;
+                        if (arr[j] == k)
+                            total++;
                     }
+
+                    if (total == n)
+                    {
+                        break;
+                    }
+                }
+                if (total == n)
+                {
+                    break;
                 }
             }
         }
         else
         {
-            cout << "-1" << endl;
+            printf("-1");
         }
     }
 
