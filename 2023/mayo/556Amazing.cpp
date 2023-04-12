@@ -9,7 +9,7 @@ int n,
     ans[10],
     memo[limit][limit],
     mov_j[4] = {1, 0,-1, 0},
-    mov_i[4] = {0,-1, 0, 1};
+    mov_i[4] = {0, 1, 0,-1};
 
 string mat[limit];
 
@@ -43,12 +43,9 @@ void recorido()
     while (true)
     {
         num++;
-        if(num>50){
-            break;
-        }
         int i = y + mov_i[pos],
             j = x + mov_j[pos];
-        cout<<i<<" "<<j<<" "<<pos<<endl;
+        //cout<<i<<" "<<j<<" "<<pos<<endl;
         if (j >= 0 && j < m && i >= 0 && i < n && mat[i][j] == '0')
         {
             if (i == n - 1 && j == 0)
@@ -58,11 +55,13 @@ void recorido()
             memo[i][j]++;
             x = j;
             y = i;
-            myprint();
+            pos++;
+            pos%=4;
+            //myprint();
         }
         else
         {
-            pos++;
+            pos+=3;
             pos %= 4;
         }
     }
@@ -98,8 +97,8 @@ void clean()
 
 int main()
 {
-    freopen("entrada.txt", "r", stdin);
-    freopen("salida.txt", "w", stdout);
+    // freopen("entrada.txt", "r", stdin);
+    // freopen("salida.txt", "w", stdout);
 
     while (cin >> n >> m)
     {
@@ -113,8 +112,11 @@ int main()
         }
         recorido();
         contar();
-        cout << ans[0] << " " << ans[1] << " " << ans[2] << " " << ans[3] << endl;
-        myprint();
+        //cout<<"**";
+        for (int i = 0; i <= 4; ++i)
+            cout << setw(3) << ans[i];
+        cout << '\n';
+        //myprint();
         clean();
     }
 
