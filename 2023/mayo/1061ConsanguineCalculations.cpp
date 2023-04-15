@@ -240,7 +240,7 @@ void print_posible_fathers()
     // cout<<parent<<" "<<child<<endl;
     if (parent == mother)
     {
-        cout<<"1"<<endl;
+        //cout<<"1"<<endl;
         cout
             << print_parents(aux[1], aux[0], flag) << " "
             << parent << " "
