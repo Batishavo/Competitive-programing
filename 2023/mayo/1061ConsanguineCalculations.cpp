@@ -75,7 +75,7 @@ void init_father_child()
     father_child[tmp] = valor;
     //////
     tmp = {"AB", "A"};
-    valor = {"AB","O","B","A" };
+    valor = {"AB", "O", "B", "A"};
     father_child[tmp] = valor;
     //////
     tmp = {"A", "O"};
@@ -83,11 +83,11 @@ void init_father_child()
     father_child[tmp] = valor;
     //////
     tmp = {"O", "A"};
-    valor = {"AB","A"};
+    valor = {"AB", "A"};
     father_child[tmp] = valor;
     //////
     tmp = {"AB", "AB"};
-    valor = {"AB","B","A"};
+    valor = {"AB", "B", "A"};
     father_child[tmp] = valor;
     //////
     tmp = {"B", "B"};
@@ -99,7 +99,7 @@ void init_father_child()
     father_child[tmp] = valor;
     //////
     tmp = {"B", "AB"};
-    valor = {"AB","A"};
+    valor = {"AB", "A"};
     father_child[tmp] = valor;
     //////
     tmp = {"B", "O"};
@@ -107,7 +107,7 @@ void init_father_child()
     father_child[tmp] = valor;
     //////
     tmp = {"O", "B"};
-    valor = {"AB","B"};
+    valor = {"AB", "B"};
     father_child[tmp] = valor;
     //////
     tmp = {"AB", "O"};
@@ -180,7 +180,7 @@ void pritn_posible_childs()
     }
 }
 
-string print_parents(string parent, string child, bool flag)
+string print_parents(string parent, string child, int flag)
 {
     string cad = "";
     if (father_child[{parent, child}][0] == "IMPOSSIBLE")
@@ -199,11 +199,15 @@ string print_parents(string parent, string child, bool flag)
             }
             else
             {
-                cad+=", ";
+                cad += ", ";
             }
-            if (!flag)
+            if (flag == 3)
             {
                 cad += x + "-, " + x + "+";
+            }
+            else if (flag == 1)
+            {
+                cad += x + "+";
             }
             else
             {
@@ -213,6 +217,19 @@ string print_parents(string parent, string child, bool flag)
         cad += "}";
     }
     return cad;
+}
+
+int dobles(string parent, int l1, int l2)
+{
+    //cout<<parent[l2]<<" "<<child[l1]<<endl;
+    if (
+        (parent[l2]=='-' && child[l1]=='+') ||
+        (parent[l2]=='+' && child[l1]=='-')
+        )
+    {
+        return 1;
+    }
+    return 3;
 }
 
 void print_posible_fathers()
@@ -231,27 +248,22 @@ void print_posible_fathers()
     string aux[4];
     aux[0] = child.substr(0, l1 - 1),
     aux[1] = parent.substr(0, l2 - 1);
-    bool flag = true;
-    if (child[l1 - 1] == '+' || parent[l2 - 1] == '+')
-    {
-        flag = false;
-    }
-    //cout<<"--"<<endl;
-    // cout<<parent<<" "<<child<<endl;
+
+    string cad = print_parents(aux[1], aux[0], dobles(parent, l1-1, l2-1));
     if (parent == mother)
     {
-        //cout<<"1"<<endl;
+        // cout<<"1"<<endl;
         cout
-            << print_parents(aux[1], aux[0], flag) << " "
+            << cad << " "
             << parent << " "
             << child << endl;
     }
     else
     {
-        //cout<<"2"<<endl;
+        // cout<<"2"<<endl;
         cout
             << parent << " "
-            << print_parents(aux[1], aux[0], flag) << " "
+            << cad << " "
             << child << endl;
     }
 }
