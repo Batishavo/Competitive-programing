@@ -75,7 +75,7 @@ void init_father_child()
     father_child[tmp] = valor;
     //////
     tmp = {"AB", "A"};
-    valor = {"AB", "O", "B", "A"};
+    valor = {"O","AB", "B", "A"};
     father_child[tmp] = valor;
     //////
     tmp = {"A", "O"};
@@ -201,11 +201,11 @@ string print_parents(string parent, string child, int flag)
             {
                 cad += ", ";
             }
-            if (flag == 3)
+            if (flag == 1)
             {
                 cad += x + "-, " + x + "+";
             }
-            else if (flag == 1)
+            else if (flag == 2)
             {
                 cad += x + "+";
             }
@@ -221,15 +221,19 @@ string print_parents(string parent, string child, int flag)
 
 int dobles(string parent, int l1, int l2)
 {
-    //cout<<parent[l2]<<" "<<child[l1]<<endl;
-    if (
-        (parent[l2]=='-' && child[l1]=='+') ||
-        (parent[l2]=='+' && child[l1]=='-')
-        )
+    // cout<<parent[l2]<<" "<<child[l1]<<endl;
+    if (parent[l1] == '*')
     {
-        return 1;
+        return 3;
     }
-    return 3;
+    else if (
+        (child == "O+" && parent[l2] == '-') ||
+        (parent == "O-" && child[l1] == '+' ||
+         (parent[0] != 'O' && child[0] != 'O' && parent[l2] == '-' && child[l1] == '+')))
+    {
+        return 2;
+    }
+    return 1;
 }
 
 void print_posible_fathers()
@@ -249,7 +253,7 @@ void print_posible_fathers()
     aux[0] = child.substr(0, l1 - 1),
     aux[1] = parent.substr(0, l2 - 1);
 
-    string cad = print_parents(aux[1], aux[0], dobles(parent, l1-1, l2-1));
+    string cad = print_parents(aux[1], aux[0], dobles(parent, l1 - 1, l2 - 1));
     if (parent == mother)
     {
         // cout<<"1"<<endl;
@@ -270,8 +274,8 @@ void print_posible_fathers()
 
 int main()
 {
-    freopen("entrada.txt", "r", stdin);
-    freopen("salida.txt", "w", stdout);
+    // freopen("entrada.txt", "r", stdin);
+    // freopen("salida.txt", "w", stdout);
 
     init_faters();
     init_father_child();
