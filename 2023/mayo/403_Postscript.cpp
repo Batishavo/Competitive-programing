@@ -9,7 +9,8 @@ string command,
     arg4;
 
 int arg2,
-    arg3;
+    arg3,
+    used[70][70];
 
 char paper[70][70];
 
@@ -22,6 +23,7 @@ void init()
         for (int j = 0; j < paper_grid; j++)
         {
             paper[i][j] = '.';
+            used[i][j] = 0;
         }
     }
 }
@@ -221,11 +223,51 @@ void print_c1(int inicio, int fin, int paso, int cad_pos)
         {
             paper[arg2][i] = arg4[cad_pos];
         }
+        else
+        {
+            paper[arg2][i] = '.';
+        }
+        used[arg2][i] = 1;
         cad_pos += paso;
     }
 }
-void print_c2()
+
+void print_leter(char caracter, int i, int j)
 {
+    int fin_i = i + 6,
+        fin_j = j + 5,
+        pi = 0,
+        pj = 0;
+
+    for (i; i < fin_i; i++)
+    {
+        for (j; j < fin_j; j++)
+        {
+            if (i < 0 || i >= paper_grid || j < 0 || j >= paper_grid)
+            {
+                continue;
+            }
+            if (used[i][j] == 0)
+                paper[i][j] = c5[caracter][pi][pj];
+            cout<<i<<" "<<j<<endl;
+            pj++;
+        }
+        cout<<endl;
+        pi++;
+    }
+}
+
+void print_c2(int i, int j, int paso_i, int cad_pos, int cad_paso)
+{
+    for (i;; i += paso_i)
+    {
+        if (i < 0 || i >= paper_grid || cad_pos < 0 || cad_pos >= arg4.size())
+        {
+            break;
+        }
+        print_leter(arg4[cad_pos], i, j);
+        cad_pos += cad_paso;
+    }
 }
 
 void write_paper()
@@ -235,11 +277,11 @@ void write_paper()
     case 'P':
         if (arg1 == "C1")
         {
-            print_c1(arg3 - 1, arg2 - 1 + arg4.size(), 1, 0);
+            print_c1(arg3 - 1, arg3 - 1 + arg4.size(), 1, 0);
         }
         else
         {
-            print_c2();
+            print_c2(arg3 - 1, arg2, 6, 0, 1);
         }
         break;
 
@@ -250,7 +292,7 @@ void write_paper()
         }
         else
         {
-            print_c2();
+            print_c2(arg2,0, 6, 0, 1);
         }
         break;
 
@@ -265,7 +307,7 @@ void write_paper()
         }
         else
         {
-            print_c2();
+            print_c2(paper_grid - 6, arg2 , -6, arg4.size() - 1, -1);
         }
         break;
 
@@ -273,30 +315,52 @@ void write_paper()
         if (arg1 == "C1")
         {
             int num = arg4.size() / 2;
-            cout<<arg4[num + 3]<<endl;
+            // cout<<arg4[num + 3]<<endl;
             if (arg4.size() % 2 == 0)
             {
 
-                print_c1(30, 30 + num ,  1, num);
-                print_c1(29, 29 - num , -1, num - 1);
+                print_c1(30, 30 + num, 1, num);
+                print_c1(29, 29 - num, -1, num - 1);
             }
             else
             {
-                //cout<<"--"<<arg4<<endl;
-                if(arg4[num + 1]!=' '){
+                // cout<<"--"<<arg4<<endl;
+                if (arg4[num + 1] != ' ')
+                {
 
                     paper[arg2][31] = arg4[num + 1];
                 }
                 if (arg4.size() > 1)
                 {
-                    print_c1(32, 32 + num -1, 1, num+2);
-                    print_c1(30, 30 - num -1, -1, num);
+                    print_c1(32, 32 + num - 1, 1, num + 2);
+                    print_c1(30, 30 - num - 1, -1, num);
                 }
             }
         }
         else
         {
-            print_c2();
+            /*int num = arg4.size() / 2;
+            // cout<<arg4[num + 3]<<endl;
+            if (arg4.size() % 2 == 0)
+            {
+
+                print_c1(30, 30 + num, 1, num);
+                print_c1(29, 29 - num, -1, num - 1);
+            }
+            else
+            {
+                // cout<<"--"<<arg4<<endl;
+                if (arg4[num + 1] != ' ')
+                {
+
+                    paper[arg2][31] = arg4[num + 1];
+                }
+                if (arg4.size() > 1)
+                {
+                    print_c1(32, 32 + num - 1, 1, num + 2);
+                    print_c1(30, 30 - num - 1, -1, num);
+                }
+            }*/
         }
         break;
     }
@@ -323,7 +387,8 @@ int main()
         }
         getline(cin, arg4);
         arg4 = arg4.substr(2, arg4.size() - 3);
-        cout << arg4 << endl;
+        arg2--;
+        // cout << arg4 << endl;
         write_paper();
     }
     // cout<<"XXXX";
