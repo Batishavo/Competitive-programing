@@ -9,8 +9,7 @@ string command,
     arg4;
 
 int arg2,
-    arg3,
-    used[70][70];
+    arg3;
 
 char paper[70][70];
 
@@ -23,7 +22,6 @@ void init()
         for (int j = 0; j < paper_grid; j++)
         {
             paper[i][j] = '.';
-            used[i][j] = 0;
         }
     }
 }
@@ -203,11 +201,14 @@ void print_paper()
         }
         cout << endl;
     }
+    cout << endl;
     for (int i = 0; i < paper_grid; i++)
     {
         cout << "-";
     }
-    cout << endl;
+    cout << endl
+         << endl;
+    ;
 }
 
 void print_c1(int inicio, int fin, int paso, int cad_pos)
@@ -215,7 +216,7 @@ void print_c1(int inicio, int fin, int paso, int cad_pos)
 
     for (int i = inicio; i != fin; i += paso)
     {
-        if (i >= paper_grid || i <= -1)
+        if (i >= paper_grid || i <= -1 || cad_pos >= arg4.size() || cad_pos < 0)
         {
             break;
         }
@@ -227,47 +228,51 @@ void print_c1(int inicio, int fin, int paso, int cad_pos)
         {
             paper[arg2][i] = '.';
         }
-        used[arg2][i] = 1;
         cad_pos += paso;
     }
 }
 
 void print_leter(char caracter, int i, int j)
 {
-    int fin_i = i + 6,
-        fin_j = j + 5,
+    int fin_i = i + 5,
+        fin_j = j + 6,
         pi = 0,
         pj = 0;
 
     for (i; i < fin_i; i++)
     {
+        j = fin_j - 6;
+        pj = 0;
         for (j; j < fin_j; j++)
         {
             if (i < 0 || i >= paper_grid || j < 0 || j >= paper_grid)
             {
                 continue;
             }
-            if (used[i][j] == 0)
+            if (paper[i][j]=='.')
                 paper[i][j] = c5[caracter][pi][pj];
-            cout<<i<<" "<<j<<endl;
+            // cout<<i<<" "<<j<<endl;
             pj++;
         }
-        cout<<endl;
+        // cout<<endl;
         pi++;
+        // cout << "--------" << endl;
     }
 }
 
-void print_c2(int i, int j, int paso_i, int cad_pos, int cad_paso)
+void print_c2(int i, int j, int paso_j, int cad_pos, int cad_paso)
 {
-    for (i;; i += paso_i)
+    for (j;; j += paso_j)
     {
-        if (i < 0 || i >= paper_grid || cad_pos < 0 || cad_pos >= arg4.size())
+        if (j <= -6 || j >= paper_grid || cad_pos < 0 || cad_pos >= arg4.size())
         {
             break;
         }
+        // cout << arg4[cad_pos] << " " << i << " " << j << endl;
         print_leter(arg4[cad_pos], i, j);
         cad_pos += cad_paso;
     }
+    // cout << endl;
 }
 
 void write_paper()
@@ -277,11 +282,11 @@ void write_paper()
     case 'P':
         if (arg1 == "C1")
         {
-            print_c1(arg3 - 1, arg3 - 1 + arg4.size(), 1, 0);
+            print_c1(arg3 - 1, arg3 + arg4.size(), 1, 0);
         }
         else
         {
-            print_c2(arg3 - 1, arg2, 6, 0, 1);
+            print_c2(arg2, arg3 - 1, 6, 0, 1);
         }
         break;
 
@@ -292,7 +297,7 @@ void write_paper()
         }
         else
         {
-            print_c2(arg2,0, 6, 0, 1);
+            print_c2(arg2, 0, 6, 0, 1);
         }
         break;
 
@@ -307,7 +312,7 @@ void write_paper()
         }
         else
         {
-            print_c2(paper_grid - 6, arg2 , -6, arg4.size() - 1, -1);
+            print_c2(arg2, paper_grid - 6, -6, arg4.size() - 1, -1);
         }
         break;
 
@@ -339,28 +344,19 @@ void write_paper()
         }
         else
         {
-            /*int num = arg4.size() / 2;
-            // cout<<arg4[num + 3]<<endl;
             if (arg4.size() % 2 == 0)
             {
-
-                print_c1(30, 30 + num, 1, num);
-                print_c1(29, 29 - num, -1, num - 1);
+                // cout<<"X"<<endl;
+                print_c2(arg2, 30, 6, arg4.size() / 2, 1);
+                print_c2(arg2, 30 - 6, -6, arg4.size() / 2 - 1, -1);
             }
             else
             {
-                // cout<<"--"<<arg4<<endl;
-                if (arg4[num + 1] != ' ')
-                {
-
-                    paper[arg2][31] = arg4[num + 1];
-                }
-                if (arg4.size() > 1)
-                {
-                    print_c1(32, 32 + num - 1, 1, num + 2);
-                    print_c1(30, 30 - num - 1, -1, num);
-                }
-            }*/
+                int cad_pos = arg4.size() / 2;
+                print_leter(arg4[cad_pos], arg2, 27);
+                print_c2(arg2, 33, 6, arg4.size() / 2 + 1, 1);
+                print_c2(arg2, 27 - 6, -6, arg4.size() / 2 - 1, -1);
+            }
         }
         break;
     }
