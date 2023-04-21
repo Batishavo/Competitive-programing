@@ -224,10 +224,6 @@ void print_c1(int inicio, int fin, int paso, int cad_pos)
         {
             paper[arg2][i] = arg4[cad_pos];
         }
-        else
-        {
-            paper[arg2][i] = '.';
-        }
         cad_pos += paso;
     }
 }
@@ -363,8 +359,8 @@ void write_paper()
 }
 int main()
 {
-    freopen("entrada.txt", "r", stdin);
-    freopen("salida.txt", "w", stdout);
+    // freopen("entrada.txt", "r", stdin);
+    // freopen("salida.txt", "w", stdout);
     init_map();
     init();
     while (cin >> command)
