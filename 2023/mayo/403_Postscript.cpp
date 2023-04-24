@@ -245,7 +245,7 @@ void print_leter(char caracter, int i, int j)
             {
                 continue;
             }
-            if (paper[i][j]=='.')
+            if (c5[caracter][pi][pj]=='*')
                 paper[i][j] = c5[caracter][pi][pj];
             // cout<<i<<" "<<j<<endl;
             pj++;
@@ -359,8 +359,8 @@ void write_paper()
 }
 int main()
 {
-    // freopen("entrada.txt", "r", stdin);
-    // freopen("salida.txt", "w", stdout);
+    freopen("entrada.txt", "r", stdin);
+    freopen("salida.txt", "w", stdout);
     init_map();
     init();
     while (cin >> command)
