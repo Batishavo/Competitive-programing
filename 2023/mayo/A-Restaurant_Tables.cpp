@@ -6,8 +6,7 @@ int aux,
     denied,
     n,
     one,
-    p_one,
-    p_two,
+    one_two,
     two;
 
 int main()
@@ -19,30 +18,34 @@ int main()
         cin >> aux;
         if (aux == 1)
         {
-            if (p_one < one)
+            if (one > 0)
             {
-                p_one++;
+                one--;
             }
-            else if (p_two < two)
+            else if (two > 0)
             {
                 two--;
-                one++;
+                one_two++;
             }
+            else if (one_two > 0)
+            {
+                one_two--;
+            }
+
             else
             {
-                //cout << i << " " << aux << endl;
                 denied++;
             }
         }
         else
         {
-            if (p_two < two)
+            if (two > 0)
             {
-                p_two++;
+                two--;
             }
             else
             {
-                //cout << i << " " << aux << endl;
+                // cout << i << " " << aux << endl;
                 denied += 2;
             }
         }
