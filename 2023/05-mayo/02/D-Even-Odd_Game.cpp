@@ -2,15 +2,16 @@
 
 using namespace std;
 
-int t,
-    n,
+int t;
+
+long long n,
     alice,
     bob;
 
-vector<int> arr_even,
+vector<long long> arr_even,
     arr_odd;
 
-stack<int> odd,
+stack<long long> odd,
     even;
 
 bool turn = true;
@@ -36,7 +37,7 @@ int main()
 
         for (int i = 0; i < n; i++)
         {
-            int aux;
+            long long aux;
             cin >> aux;
             if (aux % 2 == 0)
             {
@@ -48,10 +49,10 @@ int main()
             }
         }
 
-        sort(arr_even.begin(), arr_even.begin());
-        reverse(arr_even.begin(),arr_even.end());
-        sort(arr_odd.begin(), arr_odd.begin());
-        reverse(arr_odd.begin(), arr_odd.end());
+        sort(arr_even.begin(), arr_even.end());
+        //reverse(arr_even.begin(),arr_even.end());
+        sort(arr_odd.begin(), arr_odd.end());
+        //reverse(arr_odd.begin(), arr_odd.end());
 
         for(int i = 0; i < arr_even.size(); i++){
             even.push(arr_even[i]);
@@ -63,7 +64,13 @@ int main()
 
         while (!odd.empty() || !even.empty())
         {
-
+            /*if(!odd.empty()){
+                cout<<odd.top()<<" odd ";
+            }
+            if(!even.empty()){
+                cout<<even.top()<<" even ";
+            }
+            cout<<endl;*/
             if (odd.empty())
             {
                 if (turn)
