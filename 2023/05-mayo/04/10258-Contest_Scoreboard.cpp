@@ -7,9 +7,9 @@ const int limit = 110;
 struct teams
 {
 
-    int num_Team         = 0,
+    int num_Team = 0,
         solving_Problems = 0,
-        penalty          = 0;
+        penalty = 0;
 
     teams(int num_Team, int solving_Problems, int penalty)
     {
@@ -25,10 +25,10 @@ struct teams
              << penalty << endl;
     }
 
-    void update_num_team(int num_Team){
+    void update_num_team(int num_Team)
+    {
         this->num_Team = num_Team;
     }
-
 };
 
 int t,
@@ -78,24 +78,23 @@ void asign_Values()
 // Todo: el ordenamineto
 bool order(teams a, teams b)
 {
-    if(a.num_Team == 0){
-        return false;
-    }
-    else if(a.solving_Problems== b.solving_Problems){
-        if(a.penalty == b.penalty){
+    if (a.solving_Problems == b.solving_Problems)
+    {
+        if (a.penalty == b.penalty)
+        {
             return a.num_Team < b.num_Team;
         }
-        return a.penalty<b.penalty;
+        return a.penalty < b.penalty;
     }
-    return a.solving_Problems>b.solving_Problems;
+    return a.solving_Problems > b.solving_Problems;
 }
 void update_Right()
 {
-    constest_Teams[team] = {team};
+    int x,y;
+    constest_Teams[team] = {};
 }
 void update_Wrong()
 {
-
 }
 void update_Existing()
 {
@@ -103,8 +102,9 @@ void update_Existing()
 }
 void clean()
 {
-    for(int i = 0; i <=100;i++){
-        constest_Teams[i]={0,0,0};
+    for (int i = 0; i <= 100; i++)
+    {
+        constest_Teams[i] = {0, 0, 0};
     }
 }
 int main()
@@ -137,11 +137,12 @@ int main()
                 break;
             }
         }
-        sort(constest_Teams, constest_Teams+101, order);
-        for (int i = 0; i <=100 ; i++)
-        {   
-            if(constest_Teams[i].num_Team == 0){
-                break;
+        sort(constest_Teams, constest_Teams + 101, order);
+        for (int i = 0; i <= 100; i++)
+        {
+            if (constest_Teams[i].num_Team == 0)
+            {
+                continue;
             }
             constest_Teams[i].print_team();
         }
