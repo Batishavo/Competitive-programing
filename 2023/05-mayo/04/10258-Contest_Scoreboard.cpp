@@ -18,6 +18,12 @@ struct teams
         this->penalty = penalty;
     }
 
+    teams(){
+        this->num_Team = 0;
+        this->solving_Problems = 0;
+        this->penalty = 0;
+    }
+
     void print_team()
     {
         cout << num_Team << " "
@@ -35,8 +41,8 @@ int t,
     team,
     problem,
     penalty,
-    wrong_answer[limit][15],
-    penanty_acumulado[limit][15];
+    right_answer[limit][15],
+    penalty_acumulado[limit][15];
 
 char request_Submission;
 
@@ -47,12 +53,15 @@ teams constest_Teams[limit];
 void asign_Values()
 {
     string tmp;
-    int actual;
+    int actual=0,
+        long_cad=submision.size();
+    request_Submission=submision[long_cad-1];
 
-    for (int i = 0; i < submision.size(); i++)
+    for (int i = 0; i < long_cad; i++)
     {
         if (submision[i] == ' ')
         {
+            //cout<<tmp<<endl;
             switch (actual)
             {
             case 0:
@@ -61,12 +70,13 @@ void asign_Values()
             case 1:
                 problem = stoi(tmp);
                 break;
-            default:
+            case 2:
                 penalty = stoi(tmp);
-                request_Submission = submision[i + 1];
+                //request_Submission = submision[i + 1];
                 return;
             }
             tmp = "";
+            actual++;
         }
         else
         {
@@ -88,28 +98,42 @@ bool order(teams a, teams b)
     }
     return a.solving_Problems > b.solving_Problems;
 }
-void update_Right()
-{
-    int x,y;
-    constest_Teams[team] = {};
-}
-void update_Wrong()
-{
-}
 void update_Existing()
 {
     constest_Teams[team].update_num_team(team);
 }
+void update_Wrong()
+{
+    update_Existing();
+    int aux = penalty -penalty_acumulado[team][problem];
+    penalty_acumulado[team][problem]+=aux;
+}
+void update_Right()
+{
+    if(right_answer[team][problem]==0){
+        update_Wrong();
+        right_answer[team][problem]=1;
+        int team_Penalty = constest_Teams[team].penalty+penalty_acumulado[team][problem],
+            team_problem = constest_Teams[team].solving_Problems+1;
+        constest_Teams[team]={team,team_Penalty,team_problem};
+    }
+}
+
 void clean()
 {
     for (int i = 0; i <= 100; i++)
     {
         constest_Teams[i] = {0, 0, 0};
+        for(int j=1;j<=10;j++){
+            right_answer[i][j] = 0;
+            penalty_acumulado[i][j]=0;
+        }
     }
 }
 int main()
 {
-
+    freopen("entrada.txt", "r", stdin);
+    freopen("salida.txt", "w", stdout);
     cin >> t;
     cin.ignore();
     cin.ignore();
@@ -120,6 +144,9 @@ int main()
         while (getline(cin, submision) && submision.length() != 0)
         {
             asign_Values();
+            // cout<<team<<" "<<problem<<" "<<penalty<<endl;
+            // cout<<request_Submission<<endl;
+            cout<<submision<<endl;
             switch (request_Submission)
             {
             case 'I':
@@ -146,6 +173,7 @@ int main()
             }
             constest_Teams[i].print_team();
         }
+        clean();
     }
 
     return 0;
