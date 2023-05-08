@@ -1,2 +1,2 @@
-freopen("entrada.txt", "r", stdin);
-    
+cout << "C: ";
+                
