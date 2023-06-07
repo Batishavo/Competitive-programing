@@ -29,7 +29,7 @@ bool need_blanket(int x,int y){
             return 0;
         }
     }
-    return 1;d
+    return 1;
 }
 
 int sumatoria_x(int ini,int fin,int p){
