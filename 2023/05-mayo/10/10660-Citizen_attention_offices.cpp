@@ -13,6 +13,7 @@ pair<int, int> convert(int area)
     return {area / 5, area % 5};
 }
 
+<<<<<<< HEAD
 bool compara_ofices(int comp_ofices[])
 {
     for (int i = 0; i < 5; i++)
@@ -20,6 +21,19 @@ bool compara_ofices(int comp_ofices[])
         if (comp_ofices[i] < Offices[i])
         {
             return true;
+        }
+        else if (comp_ofices[i] > Offices[i])
+        {
+            return false;
+=======
+int Calcular_Area(pair<int, int> area)
+{
+    for (int i = 0; i < 5; i++)
+    {
+        if (comp_ofices[i] < Offices[i])
+        {
+            return true;
+>>>>>>> b4c0824 (avance en fuersas brutas)
         }
         else if (comp_ofices[i] > Offices[i])
         {
@@ -33,7 +47,7 @@ void Calcular(int ofice1, int ofice2, int ofice3, int ofice4, int ofice5)
 {
 
     int sum = 0,
-        comp_ofices[10] = {ofice1, ofice2, ofice3, ofice4, ofice5};
+        comp_ofices[10]={ofice1, ofice2, ofice3, ofice4,ofice5};
 
     pair<int, int> tmp_ofices[10];
 
@@ -43,30 +57,14 @@ void Calcular(int ofice1, int ofice2, int ofice3, int ofice4, int ofice5)
     tmp_ofices[4] = convert(ofice4);
     tmp_ofices[5] = convert(ofice5);
 
-    for(int i = 0;i<5;i++){
-        for(int j = 0;j<5;j++){
-            if(mat[i][j]!=0){
-                int tmp_min=INT_MAX;
-                for(int k = 1;k<=5;k++){
-                    tmp_min = 
-                        min(tmp_min,(abs(i - tmp_ofices[k].first) + abs(j - tmp_ofices[k].second)) * mat[i][j]);
-                }   
-                sum+=tmp_min; 
-            }
-        }
+    for (int i = 1; i <= 5; i++)
+    {
+        sum += Calcular_Area(tmp_ofices[i]);
     }
     // cout<<sum<<" "<<minimo<<endl;
     if (sum < minimo)
     {
-        // cout << sum << " " << minimo << endl;
-        // printf("%d %d %d %d %d\n", ofice1, ofice2, ofice3, ofice4, ofice5);
-        // for (int i = 0; i < 5; i++)
-        // {
-        //     cout << Offices[i] << " ";
-        // }
-        // cout << endl;
-
-        minimo = sum;
+        minimo=sum;
         Offices[0] = ofice1;
         Offices[1] = ofice2;
         Offices[2] = ofice3;
@@ -77,13 +75,6 @@ void Calcular(int ofice1, int ofice2, int ofice3, int ofice4, int ofice5)
     {
         if (compara_ofices(comp_ofices))
         {
-            // cout << sum << " " << minimo << endl;
-            // printf("%d %d %d %d %d\n", ofice1, ofice2, ofice3, ofice4, ofice5);
-            // for (int i = 0; i < 5; i++)
-            // {
-            //     cout << Offices[i] << " ";
-            // }
-            cout << endl;
             Offices[0] = ofice1;
             Offices[1] = ofice2;
             Offices[2] = ofice3;
@@ -106,7 +97,6 @@ void Brute_Force()
                     for (int m = l + 1; m < 25; m++)
                     {
                         Calcular(i, j, k, l, m);
-                        // printf("%d %d %d %d %d\n", i, j,k,l,m);
                     }
                 }
             }
@@ -118,7 +108,7 @@ void clean()
 {
     for (int i = 0; i < 5; i++)
     {
-        Offices[i] = 0;
+        Offices[i]=0;
         for (int j = 0; j < 5; j++)
         {
             mat[i][j] = 0;
@@ -129,8 +119,8 @@ void clean()
 
 int main()
 {
-    // freopen("entrada.txt", "r", stdin);
-    // freopen("salida.txt", "w", stdout);
+    freopen("entrada.txt", "r", stdin);
+    freopen("salida.txt", "w", stdout);
 
     scanf("%d", &t);
 
@@ -153,7 +143,7 @@ int main()
         }
 
         Brute_Force();
-        //cout<<"--";
+
         for (int i = 0; i < 5; i++)
         {
             cout << Offices[i];
