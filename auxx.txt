@@ -1,7 +1,4 @@
-http://servicesautos.ts17.hdi.net:8000/Autos/
-http://condicionesespeciales.ts17.hdi.net:8000/
-http://servicesautos.ts17.hdi.net:8000/Impresion/
-http://enterpriseservices.ts17.hdi.net:8000/Internal/Clientes/WCF/GestionClientes/ServicioClientes.svc
-http://emisionservice.ts17.hdi.net:8000/EmisionService.svc
-http://CotizacionAutosService.ts17.hdi.net:8000/
-http://servicioglm.ts17.hdi.net:8000/
+http://CabinaWebAPI.ts01.hdi.net:8424
+http://CabinaWorker.ts01.hdi.net:8425
+http://SiniestrosDanosWorker.ts01.hdi.net:8423
+http://NotificaMailWkrService.ts01.hdi.net:8514
