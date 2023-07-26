@@ -3,6 +3,7 @@
     "iostream": "cpp",
     "ostream": "cpp",
     "cmath": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "iomanip": "cpp"
   }
 }
