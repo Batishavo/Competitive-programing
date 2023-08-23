@@ -44,8 +44,8 @@ int max_sub_matrix_sum(int mat[][110], int n)
 int main()
 {
 
-    // freopen("entrada.txt", "r", stdin);
-    // freopen("salida.txt", "w", stdout);
+    freopen("entrada.txt", "r", stdin);
+    freopen("salida.txt", "w", stdout);
 
     int n;
     int mat[110][110];
