@@ -18,7 +18,7 @@ vector<int> calcu_dp
         dp[i]=values[i];
     }
 
-     for(int i=1;i<n;i++){
+    for(int i=1;i<n;i++){
         for(int j=0;j<i;j++){
             if(func(comp[i],comp[j])){
                 dp[i]=max(dp[i],dp[j]+values[i]);
@@ -49,7 +49,6 @@ pair<int,int>dp_increase_decrease
         decrease=max(decrease,dp_decrease[i]);
 
     }
-   
 
     return{increase,decrease};
 
