@@ -22,8 +22,8 @@ int diferentNumber(int a, int b, int c)
 int main()
 {
 
-    // freopen("entrada.txt", "r", stdin);
-    // freopen("salida.txt", "w", stdout);
+    freopen("entrada.txt", "r", stdin);
+    freopen("salida.txt", "w", stdout);
 
     int n;
 

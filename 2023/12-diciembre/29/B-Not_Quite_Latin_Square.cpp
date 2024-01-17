@@ -51,8 +51,8 @@ char misingCharacter()
 int main()
 {
 
-    // freopen("entrada.txt", "r", stdin);
-    // freopen("salida.txt", "w", stdout);
+    freopen("entrada.txt", "r", stdin);
+    freopen("salida.txt", "w", stdout);
 
     int t;
 
